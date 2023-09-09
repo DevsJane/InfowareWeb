@@ -135,19 +135,27 @@ body{
 
 /*Pagina Nosotros*/
 
-.container{
-    width:auto;
-    height:auto;
-    display:flex;
+#aboutus-text{
+    margin: 40px;
+}
+
+.aboutus-column-type{
+    margin: 40px;
+    text-align: center;
     border: 2px solid white;
 }
 
-.column{
+#aboutus-column{
     width:auto;
     height:auto;
+    margin: 20px;
     display:flex;
     flex-direction: column;
-    border: 2px solid white;
     align-items: center;
     justify-content: center;
+}
+
+.aboutus-img{
+    margin: 20px; 
+    width: 150px;
 }
