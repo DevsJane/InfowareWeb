@@ -1,0 +1,153 @@
+body{
+    color:azure;
+    font-family: 'Roboto Mono', monospace;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    background-image: url('fondo-3.jpg'); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed;
+}
+
+.section{
+    border: 2px solid white; 
+    border-radius: 10px; 
+    background-color: #444; 
+    padding: 20px; 
+    margin: 30px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.center-content{
+    justify-content: center;
+}
+
+.center-text{
+    text-align: center;
+}
+
+#logo-nav{
+    width: 80px;
+}
+
+#nav-list{
+    list-style: none; 
+    display: flex; 
+    padding: 0;
+}
+
+.nav-items{
+    text-decoration: none; 
+    color: white; 
+    padding: 5px 10px; 
+    border: 1px solid white; 
+    border-radius: 5px;
+}
+
+#banner-div{
+    border:2px solid white; 
+    height:300px; 
+    margin: 10px;
+}
+
+#banner{
+    width: 100%; 
+    height: 100%;
+}
+
+#threemage-tb{
+    margin: 30px; 
+    display: flex; 
+    justify-content:center; 
+    align-items: center;
+}
+
+.threemage-th{
+    width:500px; 
+    align-items: center;
+}
+
+.threemage-dim{
+    width:200px;
+    height:150px;
+}
+
+#div-main-img{
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    margin:50px
+}
+
+#div-main-text{
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    margin:50px;
+}
+
+#below-text-th{
+    text-align: center;
+}
+
+#socials{
+    width: 250px; 
+    display: flex; 
+    flex-direction: column;
+}
+
+.socials-logo{
+    width: 60px;
+    margin-bottom: 10px; 
+    margin-left: 50px;
+}
+
+.bottom-links-1{
+    width: 250px; 
+    vertical-align: top;
+}
+
+.bottom-links-2{
+    display: flex; 
+    flex-direction: column;
+}
+
+/*Me falta la section que esta encima del footer, dejarla para el ultimo o cambiar a div.*/
+
+/*Formulario de Registro*/
+
+#form-section{
+    width: 90%; 
+    margin: auto;
+}
+
+#form-table{
+    border: 2px solid white;
+    width:25%; 
+    margin: auto;
+}
+
+#form-margin{
+    margin: 40px;
+}
+
+/*Pagina Nosotros*/
+
+.container{
+    width:auto;
+    height:auto;
+    display:flex;
+    border: 2px solid white;
+}
+
+.column{
+    width:auto;
+    height:auto;
+    display:flex;
+    flex-direction: column;
+    border: 2px solid white;
+    align-items: center;
+    justify-content: center;
+}
