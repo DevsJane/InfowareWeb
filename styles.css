@@ -181,3 +181,14 @@ body{
     padding: 20px;
     text-align: justify;
 }
+
+.galery-container{
+    width: auto;
+    height: auto;
+    margin: 20px;
+    border: 2px solid white;
+}
+
+.galery-img{
+    width: 120px;
+}
