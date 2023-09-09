@@ -27,6 +27,10 @@ body{
     text-align: center;
 }
 
+.justify-text{
+    text-align: justify;
+}
+
 #logo-nav{
     width: 80px;
 }
@@ -88,10 +92,6 @@ body{
     margin:50px;
 }
 
-#below-text-th{
-    text-align: center;
-}
-
 #socials{
     width: 250px; 
     display: flex; 
@@ -141,6 +141,7 @@ body{
 
 .aboutus-column-type{
     margin: 40px;
+    padding: 20px;
     text-align: center;
     border: 2px solid white;
 }
@@ -157,5 +158,26 @@ body{
 
 .aboutus-img{
     margin: 20px; 
-    width: 150px;
+    width: 100px;
+    height: 100px;
+}
+
+.worker-container{
+    width: 300px;
+    height: 400px;
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid white;
+}
+
+.worker-img{
+    margin: 20px; 
+    width: 100px;
+}
+
+.info-text{
+    margin:30px;
+    padding: 20px;
+    text-align: justify;
 }
