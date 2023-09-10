@@ -192,3 +192,49 @@ body{
 .galery-img{
     width: 120px;
 }
+
+#map-img{
+    width: 400px;
+}
+
+#map-margin{
+    margin: 30px;
+}
+
+#contact-form{
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
+    text-align: center;
+}
+
+.contact-form-margin{
+    margin: 20px;
+}
+
+.input-width{
+    width: 200px;
+}
+
+#input-button{
+    text-align: center;
+}
+
+#message-width{
+    width: 200px; 
+    height: 150px;
+}
+
+.contact-socials-margin{
+    margin-right: 30px;
+}
+
+.contact-socials-type{
+    display: flex; 
+    align-items: center;
+}
+
+.contact-socials-img{
+    width: 80px; 
+    margin: 30px;
+}
