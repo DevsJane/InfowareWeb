@@ -27,6 +27,10 @@ body{
     text-align: center;
 }
 
+.link{
+    color:aquamarine;
+}
+
 .justify-text{
     text-align: justify;
 }
@@ -114,8 +118,6 @@ body{
     flex-direction: column;
 }
 
-/*Me falta la section que esta encima del footer, dejarla para el ultimo o cambiar a div.*/
-
 /*Formulario de Registro*/
 
 #form-section{
@@ -136,14 +138,22 @@ body{
 /*Pagina Nosotros*/
 
 #aboutus-text{
-    margin: 40px;
+    height: 600px;
+    padding: 30px;
+    padding-top: 80px;
+    border: 2px solid black;
+}
+
+.highlight-p{
+    color: red;
 }
 
 .aboutus-column-type{
-    margin: 40px;
+    width: 200px;
+    margin: 20px;
     padding: 20px;
     text-align: center;
-    border: 2px solid white;
+    border: 2px solid black;
 }
 
 #aboutus-column{
@@ -168,7 +178,7 @@ body{
     margin: 20px;
     padding: 20px;
     text-align: center;
-    border: 2px solid white;
+    border: 2px solid burlywood;
 }
 
 .worker-img{
