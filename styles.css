@@ -64,16 +64,19 @@ body{
     height: 100%;
 }
 
-#threemage-tb{
+#threemage-div{ 
+    padding: 20px; 
     margin: 30px; 
     display: flex; 
-    justify-content:center; 
+    justify-content: space-between; 
     align-items: center;
 }
 
-.threemage-th{
+.threemage-type{
     width:500px; 
-    align-items: center;
+    text-align: center;
+    margin-right: 20px;
+    margin-left: 20px;
 }
 
 .threemage-dim{
@@ -96,6 +99,11 @@ body{
     margin:50px;
 }
 
+#socials-text{
+    width: 400px;
+    margin: 40px;
+}
+
 #socials{
     width: 250px; 
     display: flex; 
@@ -104,35 +112,67 @@ body{
 
 .socials-logo{
     width: 60px;
-    margin-bottom: 10px; 
+    margin-bottom: 20px; 
     margin-left: 50px;
 }
 
-.bottom-links-1{
-    width: 250px; 
-    vertical-align: top;
-}
-
-.bottom-links-2{
+.bottom-links{
+    margin: 40px;
+    padding-bottom: 130px;
     display: flex; 
     flex-direction: column;
+    text-align: center;
 }
 
 /*Formulario de Registro*/
 
-#form-section{
+#register-form-section{
     width: 90%; 
     margin: auto;
 }
 
-#form-table{
+#register-form-div{
     border: 2px solid white;
-    width:25%; 
-    margin: auto;
+    padding: 20px; 
+    margin: 30px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
 }
 
-#form-margin{
-    margin: 40px;
+#register-label-div{
+    display: flex;
+    flex-direction: column; 
+    width: 700px; 
+    height:800px;
+    padding-right: 10px;
+    text-align: right;
+}
+
+#register-input-div{
+    display: flex;
+    flex-direction: column; 
+    width: 700px; 
+    height:800px;
+    padding-bottom: 11px;
+    text-align: left;
+}
+
+.register-form-margin{
+    margin: 20px;
+}
+
+.input-width{
+    width: 200px;
+}
+
+#input-button{
+    text-align: center;
+}
+
+#message-width{
+    width: 200px; 
+    height: 150px;
 }
 
 /*Pagina Nosotros*/
