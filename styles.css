@@ -19,6 +19,12 @@ body{
     align-items: center;
 }
 
+#web-title{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    color: azure;
+}
+
 .font-tmr{
     font-family: 'Times New Roman', Times, serif;
     font-size: 20px;
