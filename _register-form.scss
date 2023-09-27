@@ -1,0 +1,49 @@
+/*Formulario de Registro*/
+#register-form-section {
+    width: 90%;
+    margin: auto;
+  }
+  
+  #register-form-div {
+    border: 2px solid white;
+    padding: 20px;
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #register-label-div {
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+    height: 800px;
+    padding-right: 10px;
+    text-align: right;
+  }
+  
+  #register-input-div {
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+    height: 800px;
+    padding-bottom: 11px;
+    text-align: left;
+  }
+  
+  .register-form-margin {
+    margin: 20px;
+  }
+  
+  .input-width {
+    width: 200px;
+  }
+  
+  #input-button {
+    text-align: center;
+  }
+  
+  #message-width {
+    width: 200px;
+    height: 150px;
+  }
