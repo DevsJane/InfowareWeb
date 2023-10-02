@@ -1,4 +1,10 @@
 /*Formulario de Registro*/
+
+@mixin register-div(){
+    width: 700px;
+    height: 800px;
+}
+
 #register-form-section {
     width: 90%;
     margin: auto;
@@ -16,8 +22,7 @@
   #register-label-div {
     display: flex;
     flex-direction: column;
-    width: 700px;
-    height: 800px;
+    @include register-div();
     padding-right: 10px;
     text-align: right;
   }
@@ -25,8 +30,7 @@
   #register-input-div {
     display: flex;
     flex-direction: column;
-    width: 700px;
-    height: 800px;
+    @include register-div();
     padding-bottom: 11px;
     text-align: left;
   }

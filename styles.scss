@@ -9,7 +9,7 @@ $main-font:'Roboto Mono', monospace;
 
 @mixin display($display,$direction){
     display: $display;
-    flex-direction:$direction;
+    flex-direction: $direction;
 }
 
 body{
@@ -314,7 +314,6 @@ body{
 .data-section{
     padding: 20px; 
     margin: 30px; 
-    margin-bottom: 30px;
     @include display(flex,row); 
     justify-content: space-between; 
     align-items: center;
