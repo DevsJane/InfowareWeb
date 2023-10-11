@@ -16,42 +16,68 @@
         <h1 class="center-text">Pagina de Informatica y Hardware</h1>
 
         <nav class="navbar navbar-expand-lg bg-body-tertiary my-5" data-bs-theme="dark">
-            <div class="container-fluid">
-                <img src="logo-nav.png" id="logo-nav">
+          <div class="container-fluid">
+              <img src="logo-nav.png" id="logo-nav">
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+              <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="indexInicio.html">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="indexNosotros.html">Acerca de Nosotros</a>
+                  <a class="nav-link active" aria-current="page" href="indexInicio.html">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="indexRegistro.html">Registro</a>
-                  </li>
-                  <!--
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Dropdown
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
+                  <a class="nav-link" href="indexNosotros.html">Acerca de Nosotros</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                      <a class="nav-link" href="indexRegistro.html">Registro</a>
                   </li>
-                  -->
-                </ul>
+                  <li class="nav-item">
+                      <!-- Button trigger modal -->
+                      <button type="button" class="btn nav-link" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                          Iniciar Sesion
+                      </button>
+
+                      <!-- Modal -->
+                      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-dialog-scrollable">
+                          <div class="modal-content">
+                              <div class="modal-header bg-dark">
+                              <h1 class="modal-title fs-5 text-light" id="staticBackdropLabel">Iniciar Sesion</h1>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body text-light bg-dark">
+
+                                  <form>
+                                      <div class="row mb-3">
+                                        <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                                        <div class="col-sm-10">
+                                          <input type="email" class="form-control" id="inputEmail3">
+                                        </div>
+                                      </div>
+                                      <div class="row mb-3">
+                                        <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+                                        <div class="col-sm-10">
+                                          <input type="password" class="form-control" id="inputPassword3">
+                                        </div>
+                                      </div>
+                                  </form>
+                                  <div class="container mx-auto">
+                                      <p>No tiene cuenta? <a href="indexRegistro.html">Registrarse</a></p>
+                                  </div>
+                              </div>
+                              <div class="mx-auto mb-3 text-light bg-dark">
+                                  <a href="indexInicio.html"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Iniciar</button></a>
+                              </div>
+                          </div>
+                          </div>
+                      </div>
+                      </div>  
+                  </li>
+              </ul>
               </div>
-            </div>
-        </nav>
+          </div>
+      </nav>
 
     </header>
 

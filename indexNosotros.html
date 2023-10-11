@@ -29,7 +29,50 @@
                     <a class="nav-link" href="indexNosotros.html">Acerca de Nosotros</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="indexRegistro.html">Registro</a>
+                        <a class="nav-link" href="indexRegistro.html">Registro</a>
+                    </li>
+                    <li class="nav-item">
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn nav-link" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                            Iniciar Sesion
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-scrollable">
+                            <div class="modal-content">
+                                <div class="modal-header bg-dark">
+                                <h1 class="modal-title fs-5 text-light" id="staticBackdropLabel">Iniciar Sesion</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body text-light bg-dark">
+
+                                    <form>
+                                        <div class="row mb-3">
+                                          <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                                          <div class="col-sm-10">
+                                            <input type="email" class="form-control" id="inputEmail3">
+                                          </div>
+                                        </div>
+                                        <div class="row mb-3">
+                                          <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+                                          <div class="col-sm-10">
+                                            <input type="password" class="form-control" id="inputPassword3">
+                                          </div>
+                                        </div>
+                                    </form>
+                                    <div class="container mx-auto">
+                                        <p>No tiene cuenta? <a href="indexRegistro.html">Registrarse</a></p>
+                                    </div>
+                                </div>
+                                <div class="mx-auto mb-3 text-light bg-dark">
+                                    <a href="indexInicio.html"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Iniciar</button></a>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                        
                     </li>
                     <!--
                     <li class="nav-item dropdown">
@@ -102,6 +145,71 @@
 
     <main>
         <a name="about-us"></a>
+        <section>
+            <div class="container text-center">
+                <div class="row">
+                  <div class="col">
+                    <div class="container mx-auto my-5">
+                        <h2 class="align-items-center">Acerca de Nosotros</h2>
+                        <p>En nuestro corazón late una profunda pasión por la <b>informatica</b> y el <b>hardware</b>. Somos una <span class="highlight-p">comunidad</span> dedicada a compartir nuestro entusiasmo y conocimiento sobre la tecnología. Nuestra misión es brindarte una experiencia enriquecedora, donde puedas acceder a <b>información valiosa</b>, <b>consejos expertos</b> y <b>noticias actualizadas</b> que te mantendrán al tanto de los avances más recientes en el fascinante mundo de la tecnología.
+        
+                            Desde los componentes más avanzados hasta las guías detalladas de construcción de PCs, estamos aquí para ayudarte a comprender y aprovechar al máximo las posibilidades que ofrece este emocionante campo. <span class="highlight-p">Nuestro compromiso</span> es empoderarte, para que te sientas confiado y capacitado en tus elecciones tecnológicas.
+                            
+                            Te invitamos a unirte a nuestra comunidad, donde no solo estarás informado, sino que también tendrás la oportunidad de conectarte con personas que <span class="highlight-p">comparten tu misma pasión</span>. Juntos, exploraremos las últimas tendencias, desafíos y descubrimientos en el mundo de la informática y el hardware. Descubre con nosotros un viaje emocionante en el que la tecnología se convierte en un aliado fundamental para tu vida y tu creatividad. <b>¡Bienvenido a nuestro apasionante</b> <span class="highlight-p">universo tecnológico!</span>
+                        </p>
+                    </div>
+                  </div>
+                  <div class="col my-auto">
+                    <div class="container">
+                        <h3>Nuestro Equipo</h3>
+                    </div>
+                    <div class="accordion accordion-flush" id="accordionFlushExample">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                Lucas Rodriguez
+                            </button>
+                          </h2>
+                          <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body"> Es el Co-Fundador y Director Ejecutivo de nuestra página web. Lucas lidera nuestro equipo con una visión estratégica y la habilidad de convertir ideas en realidad.</div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                              
+                            </button>
+                          </h2>
+                          <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                              Accordion Item #3
+                            </button>
+                          </h2>
+                          <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                Accordion Item #1
+                              </button>
+                            </h2>
+                            <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                              <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </section>
+        <!--
         <section>
             <div class="section">
                 <div id="aboutus-text">
@@ -188,6 +296,7 @@
                 </div>
             </div>
         </section>
+        -->
 
         <a name="comms-form"></a>
         <section>
