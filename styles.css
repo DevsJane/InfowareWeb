@@ -1,7 +1,6 @@
 @import "register-form";
 @import "css/bootstrap.css";
 
-/*Variables*/
 body {
   color: azure;
   font-family: "Roboto Mono", monospace;
@@ -26,7 +25,7 @@ body {
 #web-title {
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   text-align: center;
-  color: red;
+  color: azure;
 }
 
 .font-tmr {
