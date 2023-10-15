@@ -1,25 +1,37 @@
-@import "register-form";
 @import "css/bootstrap.css";
 
 body {
   color: azure;
   font-family: "Roboto Mono", monospace;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  background-image: url(fondo-3.jpg);
+  /*background-image: url(fondo-3.jpg);*/
+  background-color: #0A0F22;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
 .section {
-  border: 2px solid white;
+  border: 2px solid #56B2BB;
   border-radius: 10px;
-  background-color: #444;
+  background-color: #1D2233;
   padding: 20px;
   margin: 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.secondary-bg-color{
+  background-color: #1D2233;
+}
+
+.h-color{
+  color:#F0F4F8;
+}
+
+.p-color{
+  color:#BAC7CC;
 }
 
 #web-title {
