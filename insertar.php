@@ -12,5 +12,7 @@ $descripcion = "Ola, esto es una prueba xd";
 $direccion = "Mi casa";
 
 mysqli_query($conexion,"INSERT INTO usuarios(username,password,nombre,apellido,telefono,sexo,fecha_nacimiento,descripcion,direccion) 
-            VALUES('$username','$password','$nombre','$apellido','$telefono','$sexo','$fecha_nacimiento','$descripcion','$direccion')")
+            VALUES('$username','$password','$nombre','$apellido','$telefono','$sexo','$fecha_nacimiento','$descripcion','$direccion')");
+
+mysqli_close($conexion);
 ?>
