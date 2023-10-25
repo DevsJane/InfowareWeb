@@ -1,18 +1,24 @@
 <?php
-include("index.php");
+include("conexion.php");
 
-$username = "jane";
-$password = "1110";
-$nombre = "Nicolas";
-$apellido = "Contreras";
-$telefono = "972061250";
-$sexo = "Masculino";
+$username = $_POST['Username'];
+$password = $_POST['Password'];
+$nombre = $_POST['Nombre'];
+$apellido = $_POST['Apellido'];
+$telefono = $_POST['Telefono'];
+$sexo = "Indeterminado";
 $fecha_nacimiento = "2001/01/01";
-$descripcion = "Ola, esto es una prueba xd";
-$direccion = "Mi casa";
+$descripcion = $_POST['Descripcion'];
+$direccion = $_POST['Direccion'];
 
-mysqli_query($conexion,"INSERT INTO usuarios(username,password,nombre,apellido,telefono,sexo,fecha_nacimiento,descripcion,direccion) 
+$query = mysqli_query($conexion,"INSERT INTO usuarios(username,password,nombre,apellido,telefono,sexo,fecha_nacimiento,descripcion,direccion) 
             VALUES('$username','$password','$nombre','$apellido','$telefono','$sexo','$fecha_nacimiento','$descripcion','$direccion')");
 
 mysqli_close($conexion);
+
+if($query){
+    Header("Location: indexAdmin.php");
+    echo "Se ha insertado correctamente";
+}else {
+}
 ?>
