@@ -115,8 +115,8 @@
                                                 <th><?php  echo $row['fecha_nacimiento']?></th>   
                                                 <th><?php  echo $row['descripcion']?></th>
                                                 <th><?php  echo $row['direccion']?></th>          
-                                                <th><a href="actualizar.php?id=<?php echo $row['Username'] ?>" class="btn btn-info">Editar</a></th>
-                                                <th><a href="delete.php?id=<?php echo $row['Username'] ?>" class="btn btn-danger">Eliminar</a></th>                                        
+                                                <th><a href="read.php?id=<?php echo $row['username'] ?>" class="btn btn-info">Editar</a></th>
+                                                <th><a href="delete.php?id=<?php echo $row['username'] ?>" class="btn btn-danger">Eliminar</a></th>                                        
                                             </tr>
                                         <?php 
                                             }
