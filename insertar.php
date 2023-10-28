@@ -1,6 +1,7 @@
 <?php
 include("conexion.php");
 
+$url_origen = $_POST['url_origen'];
 $email = $_POST['Email'];
 $username = $_POST['Username'];
 $password = $_POST['Password'];
@@ -25,7 +26,13 @@ if($query){
     // Guardar el nombre del usuario en una variable de sesión
     $_SESSION['created_user'] = $username;
 
-    Header("Location: indexAdmin.php");
+    if ($url_origen == 'indexAdmin.php'){
+        header('Location: indexAdmin.php');
+    }
+    else if ($url_origen == 'indexRegistro.php'){
+        header('Location: indexInicio.php');
+    }
+
 }else {
 }
 ?>

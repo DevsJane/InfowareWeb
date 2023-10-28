@@ -128,71 +128,74 @@
             </button>
         </div>
 
-        <div class="container m-5 w-75 mx-auto">
-            <div class="row d-flex justify-content-center align-items-center mt-5 mb-3">
-                <div class="col">
-                  <input type="text" class="form-control w-75 mx-auto" placeholder="Nombre" aria-label="First name">
-                </div>
-                <div class="col">
-                  <input type="text" class="form-control w-75 mx-auto" placeholder="Apellido" aria-label="Last name">
-                </div>
-            </div>
-            <div class="row mb-3">
-                <div class="col">
-                  <input type="email" class="form-control w-75 mx-auto" placeholder="Email" aria-label="Email" id="Email">
-                </div>
-                <div class="col">
-                  <input type="text" class="form-control w-75 mx-auto" placeholder="Username" aria-label="Username">
-                </div>
-            </div>
-            <div class="row mb-3">
-              <div class="col">
-                  <input type="password" class="form-control w-75 mx-auto" id="contra" placeholder="Contrasenia">
+
+        <form action="insertar.php" method="POST">
+          <input type="hidden" name="url_origen" value="<?php echo basename($_SERVER['REQUEST_URI']); ?>">
+          <input type="hidden" class="form-control mb-3" name="id" placeholder="ID">
+          <div class="container m-5 w-75 mx-auto">
+              <div class="row d-flex justify-content-center align-items-center mt-5 mb-3">
+                  <div class="col">
+                    <input type="text" class="form-control w-75 mx-auto" name="Nombre" placeholder="Nombre" aria-label="First name">
+                  </div>
+                  <div class="col">
+                    <input type="text" class="form-control w-75 mx-auto" name="Apellido" placeholder="Apellido" aria-label="Last name">
+                  </div>
               </div>
-              <div class="col">
-                  <input type="password" class="form-control w-75 mx-auto" id="contra" placeholder="Confirmar Contrasenia">
+              <div class="row mb-3">
+                  <div class="col">
+                    <input type="email" class="form-control w-75 mx-auto" name="Email" placeholder="Email" aria-label="Email" id="Email">
+                  </div>
+                  <div class="col">
+                    <input type="text" class="form-control w-75 mx-auto" name="Username" placeholder="Username" aria-label="Username">
+                  </div>
               </div>
-            </div>
-            <!--
-            <div class="mb-3 mx-auto">
-                <input type="email" class="form-control w-75 mx-auto" id="email" placeholder="Email">
-            </div>
-            -->
-            <div class="row mb-3">
+              <div class="row mb-3">
                 <div class="col">
-                    <select class="form-select w-75 mx-auto" aria-label="Default select example">
+                    <input type="password" class="form-control w-75 mx-auto" name="Password" placeholder="Contrasenia">
+                </div>
+                <div class="col">
+                    <input type="password" class="form-control w-75 mx-auto" name="Re-Password" placeholder="Confirmar Contrasenia">
+                </div>
+              </div>
+              <!--
+              <div class="mb-3 mx-auto">
+                  <input type="email" class="form-control w-75 mx-auto" id="email" placeholder="Email">
+              </div>
+              -->
+              <div class="row mb-3">
+                  <div class="col">
+                    <select class="form-select w-75 mx-auto" name="Sexo" aria-label="Default select example">
                         <option selected>Sexo</option>
-                        <option value="1">Male</option>
-                        <option value="2">Female</option>
-                        <option value="3">Other</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
                     </select>
-                </div>
-                <div class="col">
-                    <input type="date" class="form-control w-75 mx-auto" id="birthday" placeholder="Fecha de Cumpleanios">
-                </div>
-            </div>
-            <div class="row mb-3">
-              <div class="col">
-                <input type="text" class="form-control w-75 mx-auto" placeholder="Pais">
+                  </div>
+                  <div class="col">
+                      <input type="date" class="form-control w-75 mx-auto" name="Birthday" placeholder="Fecha de Cumpleanios">
+                  </div>
               </div>
+              <div class="row mb-3">
                 <div class="col">
-                  <select class="form-select w-75 mx-auto" aria-label="Default select example">
-                    <option selected>Temas de Interes</option>
-                    <option value="1">Hardware y Componentes</option>
-                    <option value="2">Software</option>
-                    <option value="3">Videojuegos</option>
-                    <option value="4">Inteligencia Artifical</option>
-                    <option value="5">Tecnologia Movil</option>
-                    <option value="6">Ciberseguridad</option>
+                  <input type="text" class="form-control w-75 mx-auto" name="Pais" placeholder="Pais">
+                </div>
+                <div class="col">
+                  <select class="form-select w-75 mx-auto" name="Area" aria-label="Default select example">
+                      <option selected>Area de Interes</option>
+                      <option value="Hardware y Componentes">Hardware y Componentes</option>
+                      <option value="Software">Software</option>
+                      <option value="Videojuegos">Videojuegos</option>
+                      <option value="Inteligencia Artifical">Inteligencia Artifical</option>
+                      <option value="Tecnologia Movil">Tecnologia Movil</option>
+                      <option value="Ciberseguridad">Ciberseguridad</option>
                   </select>
                 </div>
-            </div>
-            <div class="d-flex justify-content-center align-items-center">
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
-        </div>
-
-        
+              </div>
+              <div class="d-flex justify-content-center align-items-center">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+          </div>
+        </form>
 
     </main>
 

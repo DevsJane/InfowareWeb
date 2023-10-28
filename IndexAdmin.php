@@ -204,6 +204,7 @@
                       </div>
                       <div class="offcanvas-body">
                         <form action="insertar.php" method="POST">
+                          <input type="hidden" name="url_origen" value="<?php echo basename($_SERVER['REQUEST_URI']); ?>">
                           <input type="hidden" class="form-control mb-3" name="id" placeholder="ID">
                           <div class="container m-5 w-75 mx-auto">
                               <div class="row d-flex justify-content-center align-items-center mt-5 mb-3">
@@ -311,9 +312,9 @@
                                             <th><?php  echo $row['pais']?></th>
                                             <th><?php  echo $row['area_interes']?></th>          
                                             <th><a href="read.php?id=<?php echo $row['username'] ?>" class="btn btn-info">Editar</a></th>
-                                            <th><a class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#DeleteModal<?php echo $row['username'] ?>">Eliminar</a></th>
+                                            <th><a class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#DeleteModal<?php echo $row['id'] ?>">Eliminar</a></th>
                                             <!--Notificacion Delete-->
-                                            <div class="modal" tabindex="-1" id="DeleteModal<?php echo $row['username'] ?>">
+                                            <div class="modal" tabindex="-1" id="DeleteModal<?php echo $row['id'] ?>">
                                                 <div class="modal-dialog">
                                                 <div class="modal-content">
                                                     <div class="modal-header bg-dark">
@@ -322,10 +323,17 @@
                                                     </div>
                                                     <div class="modal-body bg-dark">
                                                     <p>Estas seguro que quieres eliminar a <?php echo $row['username'];?>?</p>
+                                                    <?php
+                                                    $dato=$row['id']-$row['username'];
+
+                                                    list($id, $username) = explode('-', $dato);
+
+                                                    echo $username;
+                                                    ?>
                                                     </div>
                                                     <div class="modal-footer bg-dark">
                                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Salir</button>
-                                                    <a href="delete.php?id=<?php echo $row['username'] ?>" class="btn btn-danger">Eliminar</a>
+                                                    <a href="delete.php?id=<?php echo $row['id']-$row['username'] ?>" class="btn btn-danger">Eliminar</a>
                                                     </div>
                                                 </div>
                                                 </div>
