@@ -1,18 +1,18 @@
 <?php
 include("conexion.php");
 
+$email = $_POST['Email'];
 $username = $_POST['Username'];
 $password = $_POST['Password'];
 $nombre = $_POST['Nombre'];
 $apellido = $_POST['Apellido'];
-$telefono = $_POST['Telefono'];
-$sexo = "Indeterminado";
-$fecha_nacimiento = "2001/01/01";
-$descripcion = $_POST['Descripcion'];
-$direccion = $_POST['Direccion'];
+$sexo = $_POST['Sexo'];
+$fecha_nacimiento = $_POST['Birthday'];
+$pais = $_POST['Pais'];
+$area_interes = $_POST['Area'];
 
-$query = mysqli_query($conexion,"INSERT INTO usuarios(username,password,nombre,apellido,telefono,sexo,fecha_nacimiento,descripcion,direccion) 
-            VALUES('$username','$password','$nombre','$apellido','$telefono','$sexo','$fecha_nacimiento','$descripcion','$direccion')");
+$query = mysqli_query($conexion,"INSERT INTO usuarios(email,username,password,nombre,apellido,sexo,fecha_nacimiento,pais,area_interes) 
+            VALUES('$email','$username','$password','$nombre','$apellido','$sexo','$fecha_nacimiento','$pais','$area_interes')");
 
 mysqli_close($conexion);
 

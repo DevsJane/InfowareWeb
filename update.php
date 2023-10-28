@@ -1,22 +1,21 @@
 <?php
 include("conexion.php");
 
-$username = $_POST['Username'];
+$id = $_POST['id'];
+$new_email = $_POST['Email'];
+$new_username = $_POST['Username'];
 $new_password = $_POST['Password'];
 $new_nombre = $_POST['Nombre'];
 $new_apellido = $_POST['Apellido'];
-$new_telefono = $_POST['Telefono'];
 $new_sexo = $_POST['Sexo'];
-$new_fecha_nacimiento = "2001/01/01";
-$new_descripcion = $_POST['Descripcion'];
-$new_direccion = $_POST['Direccion'];
+$new_fecha_nacimiento = $_POST['Birthday'];
+$new_pais = $_POST['Pais'];
+$new_area = $_POST['Area'];
 
-$query = mysqli_query($conexion, "UPDATE usuarios SET password='$new_password', nombre='$new_nombre', apellido='$new_apellido', telefono='$new_telefono', sexo='$new_sexo', fecha_nacimiento='$new_fecha_nacimiento', descripcion='$new_descripcion', direccion='$new_direccion' WHERE username='$username'");
+$query = mysqli_query($conexion, "UPDATE usuarios SET email='$new_email', username='$new_username', password='$new_password', nombre='$new_nombre', apellido='$new_apellido', sexo='$new_sexo', fecha_nacimiento='$new_fecha_nacimiento', pais='$new_pais', area_interes='$new_area' WHERE id='$id'");
 
 mysqli_close($conexion);
 
 if($query){
     Header("Location: indexAdmin.php");
 }
-
-?>
