@@ -17,5 +17,13 @@ $query = mysqli_query($conexion, "UPDATE usuarios SET email='$new_email', userna
 mysqli_close($conexion);
 
 if($query){
+    // Iniciar la sesión si aún no se ha iniciado
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+
+    // Guardar el nombre del usuario en una variable de sesión
+    $_SESSION['updated_user'] = $new_username;
+
     Header("Location: indexAdmin.php");
 }

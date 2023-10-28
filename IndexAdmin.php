@@ -21,6 +21,54 @@
     <!--Links para footer-->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <!---->
+    <?php
+    // Iniciar la sesión si aún no se ha iniciado
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+
+    // Verificar si existe la variable de sesión 'deleted_user'
+    if (isset($_SESSION['deleted_user'])) {
+        $deleted_user = $_SESSION['deleted_user'];
+
+        // Mostrar la alerta con el nombre del usuario
+        echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">' .
+            'El usuario ' . $deleted_user . ' ha sido eliminado.' .
+            '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' .
+            '</div>';
+
+        // Eliminar la variable de sesión para que la alerta no se muestre de nuevo
+        unset($_SESSION['deleted_user']);
+    }
+    if (isset($_SESSION['created_user'])) {
+      $created_user = $_SESSION['created_user'];
+
+      // Mostrar la alerta con el nombre del usuario
+      echo '<div class="alert alert-success alert-dismissible fade show" role="alert">' .
+          'El usuario ' . $created_user . ' ha sido ingresado.' .
+          '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' .
+          '</div>';
+
+      // Eliminar la variable de sesión para que la alerta no se muestre de nuevo
+      unset($_SESSION['created_user']);
+    }
+    if (isset($_SESSION['updated_user'])) {
+      $updated_user = $_SESSION['updated_user'];
+
+      // Mostrar la alerta con el nombre del usuario
+      echo '<div class="alert alert-primary alert-dismissible fade show" role="alert">' .
+          'El usuario ' . $updated_user . ' ha sido actualizado.' .
+          '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' .
+          '</div>';
+
+      // Eliminar la variable de sesión para que la alerta no se muestre de nuevo
+      unset($_SESSION['updated_user']);
+    }
+
+    // El resto de tu código...
+    ?>
+
+
 </head>
 <body>
 
