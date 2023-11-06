@@ -45,13 +45,13 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="indexInicio.html">Home</a>
+                  <a class="nav-link active" aria-current="page" href="indexInicio.php">Home</a>
                   </li>
                   <li class="nav-item">
                   <a class="nav-link" href="indexNosotros.html">Acerca de Nosotros</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link" href="indexRegistro.html">Registro</a>
+                      <a class="nav-link" href="indexRegistro.php">Registro</a>
                   </li>
                   <li class="nav-item">
                       <!-- Button trigger modal -->

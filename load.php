@@ -101,12 +101,13 @@ if ($num_rows > 0) {
         $output['data'] .= '<td style="font-size:10px; width:20px;">' . $row['pais'] . '</td>';
         $output['data'] .= '<td style="font-size:10px; width:20px;">' . $row['area_interes'] . '</td>';
         $output['data'] .= '<td style="font-size:10px; width:20px;"><a class="btn btn-warning btn-sm" href="read.php?id=' . $row['username'] . '">Editar</a></td>';
-        $output['data'] .= "<td ><a class='btn btn-danger btn-sm' href='delete.php?id=" . $row['id'] . "'>Eliminar</a></td>";
+        $output['data'] .= "<td><button class='btn btn-danger btn-sm' data-bs-toggle='modal' data-bs-target='#deleteModal" . $row['id'] . "'>Eliminar</button></td>";
+
         $output['data'] .= '</tr>';
     }
 } else {
     $output['data'] .= '<tr>';
-    $output['data'] .= '<td colspan="7">Sin resultados</td>';
+    $output['data'] .= '<td colspan="12">Sin resultados</td>';
     $output['data'] .= '</tr>';
 }
 
@@ -141,5 +142,25 @@ if ($output['totalRegistros'] > 0) {
 }
 
 echo json_encode($output, JSON_UNESCAPED_UNICODE);
+
+echo "
+<div class='modal' tabindex='-1' id='deleteModal" . $row['id'] . "'>
+<div class='modal-dialog'>
+    <div class='modal-content'>
+    <div class='modal-header'>
+        <h5 class='modal-title'>Confirmación</h5>
+        <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
+    </div>
+    <div class='modal-body'>
+        <p>¿Estás seguro de que quieres eliminar este elemento?</p>
+    </div>
+    <div class='modal-footer'>
+        <button type='button' class='btn btn-secondary' data-bs-dismiss='modal'>Cancelar</button>
+        <a href='delete.php?id=" . $row['id'] . "' class='btn btn-danger'>Eliminar</a>
+    </div>
+    </div>
+</div>
+</div>
+";
 
 ?>                        
