@@ -48,7 +48,7 @@
                                 </div>
                                 <div class="modal-body text-light bg-dark">
 
-                                    <form>
+                                    <form autocomplete="off">
                                         <div class="row mb-3">
                                           <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
                                           <div class="col-sm-10">
@@ -129,7 +129,7 @@
         </div>
 
 
-        <form action="insertar.php" method="POST">
+        <form action="insertar.php" method="POST" autocomplete="off">
           <input type="hidden" name="url_origen" value="<?php echo basename($_SERVER['REQUEST_URI']); ?>">
           <input type="hidden" class="form-control mb-3" name="id" placeholder="ID">
           <div class="container m-5 w-75 mx-auto">
@@ -192,7 +192,7 @@
                 </div>
               </div>
               <div class="d-flex justify-content-center align-items-center">
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="submit" class="btn btn-primary">Registrar</button>
               </div>
           </div>
         </form>

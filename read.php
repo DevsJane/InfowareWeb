@@ -206,7 +206,7 @@ $row=mysqli_fetch_array($query);
       <section>
         <div class="container mt-5">
 
-            <form action="update.php" method="POST">
+            <form action="update.php" method="POST" autocomplete="off">
                 <input type="hidden" class="form-control mb-3" name="id" placeholder="ID" value="<?php echo $row['id']  ?>">
                 <input type="hidden" name="url_origen" value="<?php echo basename($_SERVER['REQUEST_URI']); ?>">
                 <div class="container m-5 w-75 mx-auto">
