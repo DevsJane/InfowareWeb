@@ -10,16 +10,6 @@ $row=mysqli_fetch_array($query);
 ?>
 
 
-<?php 
-    include("conexion.php");
-
-    $sql="SELECT * FROM usuarios";
-    $query=mysqli_query($conexion,$sql);
-
-    $row=mysqli_fetch_array($query);
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -212,44 +202,44 @@ $row=mysqli_fetch_array($query);
                 <div class="container m-5 w-75 mx-auto">
                     <div class="row d-flex justify-content-center align-items-center mt-5 mb-3">
                         <div class="col">
-                            <input type="text" class="form-control mb-3" name="Nombre" placeholder="Nombre" value="<?php echo $row['nombre']  ?>">
+                            <input type="text" class="form-control mb-3" name="Nombre" placeholder="Nombre" value="<?php echo $row['nombre']  ?>" required>
                         </div>
                         <div class="col">
-                            <input type="text" class="form-control mb-3" name="Apellido" placeholder="Apellido" value="<?php echo $row['apellido']  ?>">
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col">
-                            <input type="text" class="form-control mb-3" name="Email" placeholder="Email" value="<?php echo $row['email']  ?>">
-                        </div>
-                        <div class="col">
-                            <input type="text" class="form-control mb-3" name="Username" placeholder="Username" value="<?php echo $row['username']  ?>">
+                            <input type="text" class="form-control mb-3" name="Apellido" placeholder="Apellido" value="<?php echo $row['apellido']  ?>" required>
                         </div>
                     </div>
                     <div class="row mb-3">
                         <div class="col">
-                            <input type="text" class="form-control mb-3" name="Password" placeholder="Password" value="<?php echo $row['password']  ?>">
+                            <input type="text" class="form-control mb-3" name="Email" placeholder="Email" value="<?php echo $row['email']  ?>" required>
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control mb-3" name="Username" placeholder="Username" value="<?php echo $row['username']  ?>"required>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <input type="text" class="form-control mb-3" name="Password" placeholder="Password" value="<?php echo $row['password']  ?>" required>
                         </div>
                         
                     </div>
                     <div class="row mb-3">
+                    <div class="col">
+                        <select class="form-select w-75 mx-auto" name="Sexo" aria-label="Default select example" required>
+                            <option value="Male" <?php if($row['sexo'] == 'Male') echo 'selected'; ?>>Male</option>
+                            <option value="Female" <?php if($row['sexo'] == 'Female') echo 'selected'; ?>>Female</option>
+                            <option value="Other" <?php if($row['sexo'] == 'Other') echo 'selected'; ?>>Other</option>
+                        </select>
+                    </div>
                         <div class="col">
-                            <select class="form-select w-75 mx-auto" name="Sexo" aria-label="Default select example" value="<?php echo $row['sexo']  ?>">
-                                <option value="Male">Male</option>
-                                <option value="Female">Female</option>
-                                <option value="Other">Other</option>
-                            </select>
-                        </div>
-                        <div class="col">
-                            <input type="date" class="form-control w-75 mx-auto" name="Birthday" id="birthday" placeholder="Fecha de Nacimiento" value="<?php echo $row['fecha_nacimiento']  ?>">
+                            <input type="date" class="form-control w-75 mx-auto" name="Birthday" id="birthday" placeholder="Fecha de Nacimiento" value="<?php echo $row['fecha_nacimiento']  ?>" required>
                         </div>
                     </div>
                     <div class="row mb-3">
                         <div class="col">
-                        <input type="text" class="form-control mb-3" name="Pais" placeholder="Pais" value="<?php echo $row['pais']  ?>">
+                        <input type="text" class="form-control mb-3" name="Pais" placeholder="Pais" value="<?php echo $row['pais']  ?>" required>
                         </div>
                         <div class="col">
-                        <select class="form-select w-75 mx-auto" name="Area" aria-label="Default select example">
+                        <select class="form-select w-75 mx-auto" name="Area" aria-label="Default select example" required>
                             <option value="Hardware y Componentes" <?php if($row['area_interes'] == 'Hardware y Componentes') echo 'selected'; ?>>Hardware y Componentes</option>
                             <option value="Software" <?php if($row['area_interes'] == 'Software') echo 'selected'; ?>>Software</option>
                             <option value="Videojuegos" <?php if($row['area_interes'] == 'Videojuegos') echo 'selected'; ?>>Videojuegos</option>
@@ -265,8 +255,8 @@ $row=mysqli_fetch_array($query);
                     <!--Notificacion Editar-->
                     <div class="modal" tabindex="-1" id="UpdateModal">
                         <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
+                        <div class="modal-content bg-dark">
+                            <div class="modal-header bg-dark">
                             <h5 class="modal-title">Confirmacion</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>

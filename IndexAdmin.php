@@ -209,26 +209,26 @@
                           <div class="container m-5 w-75 mx-auto">
                               <div class="row d-flex justify-content-center align-items-center mt-5 mb-3">
                                   <div class="col">
-                                    <input type="text" class="form-control w-75 mx-auto" name="Nombre" placeholder="Nombre" aria-label="First name">
+                                    <input type="text" class="form-control w-75 mx-auto" name="Nombre" placeholder="Nombre" aria-label="First name" required>
                                   </div>
                                   <div class="col">
-                                    <input type="text" class="form-control w-75 mx-auto" name="Apellido" placeholder="Apellido" aria-label="Last name">
+                                    <input type="text" class="form-control w-75 mx-auto" name="Apellido" placeholder="Apellido" aria-label="Last name" required>
                                   </div>
                               </div>
                               <div class="row mb-3">
                                   <div class="col">
-                                    <input type="email" class="form-control w-75 mx-auto" name="Email" placeholder="Email" aria-label="Email" id="Email">
+                                    <input type="email" class="form-control w-75 mx-auto" name="Email" placeholder="Email" aria-label="Email" id="Email" required>
                                   </div>
                                   <div class="col">
-                                    <input type="text" class="form-control w-75 mx-auto" name="Username" placeholder="Username" aria-label="Username">
+                                    <input type="text" class="form-control w-75 mx-auto" name="Username" placeholder="Username" aria-label="Username" required>
                                   </div>
                               </div>
                               <div class="row mb-3">
                                 <div class="col">
-                                    <input type="password" class="form-control w-75 mx-auto" name="Password" placeholder="Contrasenia">
+                                    <input type="password" class="form-control w-75 mx-auto" name="Password" placeholder="Contrasenia" required>
                                 </div>
                                 <div class="col">
-                                    <input type="password" class="form-control w-75 mx-auto" name="Re-Password" placeholder="Confirmar Contrasenia">
+                                    <input type="password" class="form-control w-75 mx-auto" name="Re-Password" placeholder="Confirmar Contrasenia" required>
                                 </div>
                               </div>
                               <!--
@@ -238,7 +238,7 @@
                               -->
                               <div class="row mb-3">
                                   <div class="col">
-                                    <select class="form-select w-75 mx-auto" name="Sexo" aria-label="Default select example">
+                                    <select class="form-select w-75 mx-auto" name="Sexo" aria-label="Default select example" required>
                                         <option selected>Sexo</option>
                                         <option value="Male">Male</option>
                                         <option value="Female">Female</option>
@@ -246,15 +246,15 @@
                                     </select>
                                   </div>
                                   <div class="col">
-                                      <input type="date" class="form-control w-75 mx-auto" name="Birthday" placeholder="Fecha de Cumpleanios">
+                                      <input type="date" class="form-control w-75 mx-auto" name="Birthday" placeholder="Fecha de Cumpleanios" required>
                                   </div>
                               </div>
                               <div class="row mb-3">
                                 <div class="col">
-                                  <input type="text" class="form-control w-75 mx-auto" name="Pais" placeholder="Pais">
+                                  <input type="text" class="form-control w-75 mx-auto" name="Pais" placeholder="Pais" required>
                                 </div>
                                 <div class="col">
-                                  <select class="form-select w-75 mx-auto" name="Area" aria-label="Default select example">
+                                  <select class="form-select w-75 mx-auto" name="Area" aria-label="Default select example" required>
                                       <option selected>Area de Interes</option>
                                       <option value="Hardware y Componentes">Hardware y Componentes</option>
                                       <option value="Software">Software</option>
@@ -275,7 +275,7 @@
 
                     <div class="col-md-3 mx-auto">
                       <!-- Botón para abrir el modal -->
-                      <button type="button" class="btn btn-primary d-flex mx-auto mb-5" data-toggle="modal" data-target="#miModal">
+                      <button type="button" class="btn btn-primary d-flex mx-auto mb-5"  data-toggle="modal" data-target="#miModal">
                         Busqueda Avanzada
                       </button>
                     </div>
@@ -459,9 +459,9 @@
 
                     </div>
 
-                    <div class="col-md-8 d-flex mr-5">
+                    <div class="col-md-8 d-flex mr-5 mb-5">
                         <table class="table table-dark" style="width:200px;height:200px;">
-                            <thead class="table-success table-striped table-light" >
+                            <thead class="table-success table-striped table-secondary" >
                                 <tr>
                                     <th style="text-align: center;padding: 15px;">Email</th>
                                     <th style="text-align: center;padding: 15px;">Username</th>
@@ -515,7 +515,7 @@
                                                     </div>
                                                     <div class="modal-footer bg-dark">
                                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Salir</button>
-                                                    <a href="delete.php?id=<?php echo $row['id']-$row['username'] ?>" class="btn btn-danger">Eliminar</a>
+                                                    <a href="delete.php?id=<?php echo $row['username'] ?>" class="btn btn-danger">Eliminar</a>
                                                     </div>
                                                 </div>
                                                 </div>

@@ -135,26 +135,26 @@
           <div class="container m-5 w-75 mx-auto">
               <div class="row d-flex justify-content-center align-items-center mt-5 mb-3">
                   <div class="col">
-                    <input type="text" class="form-control w-75 mx-auto" name="Nombre" placeholder="Nombre" aria-label="First name">
+                    <input type="text" class="form-control w-75 mx-auto" name="Nombre" placeholder="Nombre" aria-label="First name" required>
                   </div>
                   <div class="col">
-                    <input type="text" class="form-control w-75 mx-auto" name="Apellido" placeholder="Apellido" aria-label="Last name">
+                    <input type="text" class="form-control w-75 mx-auto" name="Apellido" placeholder="Apellido" aria-label="Last name" required>
                   </div>
               </div>
               <div class="row mb-3">
                   <div class="col">
-                    <input type="email" class="form-control w-75 mx-auto" name="Email" placeholder="Email" aria-label="Email" id="Email">
+                    <input type="email" class="form-control w-75 mx-auto" name="Email" placeholder="Email" aria-label="Email" id="Email" required>
                   </div>
                   <div class="col">
-                    <input type="text" class="form-control w-75 mx-auto" name="Username" placeholder="Username" aria-label="Username">
+                    <input type="text" class="form-control w-75 mx-auto" name="Username" placeholder="Username" aria-label="Username" required>
                   </div>
               </div>
               <div class="row mb-3">
                 <div class="col">
-                    <input type="password" class="form-control w-75 mx-auto" name="Password" placeholder="Contrasenia">
+                    <input type="password" class="form-control w-75 mx-auto" name="Password" placeholder="Contrasenia" required>
                 </div>
                 <div class="col">
-                    <input type="password" class="form-control w-75 mx-auto" name="Re-Password" placeholder="Confirmar Contrasenia">
+                    <input type="password" class="form-control w-75 mx-auto" name="Re-Password" placeholder="Confirmar Contrasenia" required>
                 </div>
               </div>
               <!--
@@ -164,7 +164,7 @@
               -->
               <div class="row mb-3">
                   <div class="col">
-                    <select class="form-select w-75 mx-auto" name="Sexo" aria-label="Default select example">
+                    <select class="form-select w-75 mx-auto" name="Sexo" aria-label="Default select example" required>
                         <option selected>Sexo</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
@@ -172,15 +172,15 @@
                     </select>
                   </div>
                   <div class="col">
-                      <input type="date" class="form-control w-75 mx-auto" name="Birthday" placeholder="Fecha de Cumpleanios">
+                      <input type="date" class="form-control w-75 mx-auto" name="Birthday" placeholder="Fecha de Cumpleanios" required>
                   </div>
               </div>
               <div class="row mb-3">
                 <div class="col">
-                  <input type="text" class="form-control w-75 mx-auto" name="Pais" placeholder="Pais">
+                  <input type="text" class="form-control w-75 mx-auto" name="Pais" placeholder="Pais" required>
                 </div>
                 <div class="col">
-                  <select class="form-select w-75 mx-auto" name="Area" aria-label="Default select example">
+                  <select class="form-select w-75 mx-auto" name="Area" aria-label="Default select example" required>
                       <option selected>Area de Interes</option>
                       <option value="Hardware y Componentes">Hardware y Componentes</option>
                       <option value="Software">Software</option>

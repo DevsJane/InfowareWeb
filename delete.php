@@ -3,10 +3,11 @@
 include("conexion.php");
 
 $dato=$_GET['id'];
-
+/*
 list($id, $username) = explode('-', $dato);
+*/
 
-$sql="DELETE FROM usuarios  WHERE id='$id'";
+$sql="DELETE FROM usuarios  WHERE username='$dato'";
 $query=mysqli_query($conexion,$sql);
 
 if($query){
@@ -16,7 +17,7 @@ if($query){
     }
 
     // Guardar el nombre del usuario en una variable de sesión
-    $_SESSION['deleted_user'] = $username;
+    $_SESSION['deleted_user'] = $dato;
 
     Header("Location: indexAdmin.php");
 }
