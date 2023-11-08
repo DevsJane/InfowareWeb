@@ -1,3 +1,13 @@
+<?php 
+    include("conexion.php");
+
+    $sql="SELECT * FROM usuarios";
+    $query=mysqli_query($conexion,$sql);
+
+    $row=mysqli_fetch_array($query);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,49 +15,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Infoware Web</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    
     <!--Links para footer-->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <!---->
     <?php
+    // Iniciar la sesión si aún no se ha iniciado
     if (session_status() == PHP_SESSION_NONE) {
-      session_start();
+        session_start();
     }
 
+    if (isset($_SESSION['deleted_user'])) {
+        $deleted_user = $_SESSION['deleted_user'];
+
+        echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">' .
+            'El usuario ' . $deleted_user . ' ha sido eliminado.' .
+            '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' .
+            '</div>';
+
+        unset($_SESSION['deleted_user']);
+    }
     if (isset($_SESSION['created_user'])) {
       $created_user = $_SESSION['created_user'];
 
-      // Mostrar la alerta con el nombre del usuario
+      // Alerta Nombre de Usuario
       echo '<div class="alert alert-success alert-dismissible fade show" role="alert">' .
-          'El usuario ' . $created_user . ' ha sido registrado.' .
+          'El usuario ' . $created_user . ' ha sido ingresado.' .
           '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' .
           '</div>';
 
       unset($_SESSION['created_user']);
     }
+    if (isset($_SESSION['updated_user'])) {
+      $updated_user = $_SESSION['updated_user'];
 
-    if (isset($_SESSION['RecoveredUser'])) {
-      $recovered_user = $_SESSION['RecoveredUser'];
-
-      // Mostrar la alerta con el nombre del usuario
-      echo '<div class="alert alert-success alert-dismissible fade show" role="alert">' .
-          'La contrasenia del usuario ' . $recovered_user . ' ha sido actualizada.' .
+      echo '<div class="alert alert-primary alert-dismissible fade show" role="alert">' .
+          'El usuario ' . $updated_user . ' ha sido actualizado.' .
           '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' .
           '</div>';
-      //Falta que el usuario quede Logueado cuando cambia la contrasenia.
-    }
-    if (isset($_SESSION['NotRecoveredUser'])) {
-      $not_recovered_user = $_SESSION['NotRecoveredUser'];
 
-      // Mostrar la alerta con el nombre del usuario
-      echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">' .
-          'El Email y la contrasenia no coinciden' .
-          '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' .
-          '</div>';
+      unset($_SESSION['updated_user']);
     }
+
     ?>
+
 
 </head>
 <body>
@@ -61,18 +75,8 @@
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
               </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="indexInicio.php">Home</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="indexNosotros.php">Acerca de Nosotros</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="indexRegistro.php">Registro</a>
-                    </li>
-                </ul>
+              <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
+                
                 <img src="icono-usuario.png" alt="IconoUsuario" style="margin:5px;">
                 <?php if(isset($_SESSION['logged_in_user'])): ?>
                     <div class="dropdown ">
@@ -115,7 +119,7 @@
                                 <p class="text-danger"><?php echo $_SESSION['login_error']; unset($_SESSION['login_error']); ?></p>
                             <?php endif; ?>
 
-                            <form action="login.php" method="POST" autocomplete="off">
+                            <form action="passwordRecovery.php" method="POST" autocomplete="off">
                                 <div class="row mb-3">
                                     <label for="inputUsername" class="col-sm-2 col-form-label">Username</label>
                                     <div class="col-sm-10">
@@ -128,11 +132,6 @@
                                         <input type="password" class="form-control" id="inputPassword" name="Password">
                                     </div>
                                 </div>
-
-                                <div class="container mx-auto">
-                                    <p>Olvido la contrasenia?<a href="indexPasswordRecovery.php">Recuperar Contrasenia</a></p>
-                                </div>
-                               
                                 <div class="container mx-auto">
                                     <p>No tiene cuenta? <a href="indexRegistro.php">Registrarse</a></p>
                                 </div>
@@ -156,54 +155,30 @@
     <main>
 
       <section>
-        <div id="carouselExampleCaptions" class="carousel slide mx-5">
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <form action="passwordRecovery.php" method="POST" autocomplete="off">
+          <input type="hidden" name="url_origen" value="<?php echo basename($_SERVER['REQUEST_URI']); ?>">
+          <input type="hidden" class="form-control mb-3" name="id" placeholder="ID">
+          <div class="container m-5 w-75 mx-auto">
+              
+              <div class="row mb-3">
+                  <div class="col">
+                    <input type="email" class="form-control w-75 mx-auto" name="Email" placeholder="Email de la cuenta" aria-label="Email" id="Email" required>
+                  </div>
+                  <div class="col">
+                    <input type="text" class="form-control w-75 mx-auto" name="Username" placeholder="Username de la cuenta" aria-label="Username" required>
+                  </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col">
+                    <input type="password" class="form-control w-75 mx-auto" name="Password" placeholder="Nueva Contrasenia" required>
+                </div>
+              </div>
+              </div>
+              <div class="d-flex justify-content-center align-items-center">
+                  <button type="submit" class="btn btn-primary">Recuperar contrasenia</button>
+              </div>
           </div>
-          <div class="carousel-inner mx">
-            <div class="carousel-item active">
-              <img src="carrusel-redes.jpeg" class="d-block w-100" alt="..." height="400px">
-              <div class="carousel-caption d-none d-md-block">
-                  <div class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">
-                      <h5>Conoce nuestras redes sociales</h5>
-                      <p>Te invitamos a conocer las redes sociales de nuestra pagina!</p>
-                  </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img src="carrusel-register.jpeg" class="d-block w-100" alt="..." height="400px">
-              <div class="carousel-caption d-none d-md-block">
-                  <div class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">
-                      <h5>Registrate</h5>
-                      <p>Si quieres unirte a esta enorme comunidad, te invitamos a registrarte en nuestra Web.</p>
-                  </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img src="carrusel-comm.jpg" class="d-block w-100" alt="..." height="400px">
-              <div class="carousel-caption d-none d-md-block">
-                  <div class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">
-                      <h5>Comunicate con nosotros</h5>
-                      <p>Tenemos un canal de comunicacion para poder consultar cualquier cosa.</p>
-                  </div>
-              </div>
-            </div>
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
-      </section>
-
-      <section>
-        
+        </form>
       </section>
 
     </main>
@@ -250,3 +225,4 @@
 
 </body>
 </html>
+
