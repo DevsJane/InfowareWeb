@@ -43,63 +43,90 @@
               <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="indexInicio.php">Home</a>
-                  </li>
-                  <li class="nav-item">
-                  <a class="nav-link" href="indexNosotros.html">Acerca de Nosotros</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="indexRegistro.php">Registro</a>
-                  </li>
-                  <li class="nav-item">
-                      <!-- Button trigger modal -->
-                      <button type="button" class="btn nav-link" data-bs-toggle="modal" data-bs-target="#staticBackdropLogin" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
-                          Iniciar Sesion
-                      </button>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="indexInicio.php">Home</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="indexNosotros.php">Acerca de Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="indexRegistro.php">Registro</a>
+                    </li>
+                </ul>
+                <img src="icono-usuario.png" alt="IconoUsuario" style="margin:5px;">
+                <?php if(isset($_SESSION['logged_in_user'])): ?>
+                    <div class="dropdown ">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false"
+                        style="background:none; border:none;margin-right:20px;">
+                            <?php echo $_SESSION['logged_in_user']; ?>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                            <li><a class="dropdown-item" href="logout.php">Cerrar sesión</a></li>
+                        </ul>
+                    </div>
+                <?php else: ?>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn nav-link" data-bs-toggle="modal" data-bs-target="#staticBackdropLogin" 
+                      style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-right:20px;">
+                        Iniciar Sesion
+                    </button>
+                    <!-- Modal -->
+                    <!-- Jquery -->
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-                      <!-- Modal -->
-                      <div class="modal fade" id="staticBackdropLogin" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                          <div class="modal-dialog modal-dialog-scrollable">
-                          <div class="modal-content">
-                              <div class="modal-header bg-dark">
-                              <h1 class="modal-title fs-5 text-light" id="staticBackdropLabel">Iniciar Sesion</h1>
-                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                              </div>
-                              <div class="modal-body text-light bg-dark">
+                    <script>
+                    $(document).ready(function(){
+                        <?php if(isset($_SESSION['login_error'])): ?>
+                            // Volver a abrir el modal de inicio de sesión
+                            $('#staticBackdropLogin').modal('show');
+                        <?php endif; ?>
+                    });
+                    </script>
 
-                                  <form action="login.php" method="POST">
-                                      <div class="row mb-3">
-                                        <label for="inputEmail3" class="col-sm-2 col-form-label">Username</label>
-                                        <div class="col-sm-10">
-                                          <input type="email" class="form-control" id="inputEmail3" name="Username">
-                                        </div>
-                                      </div>
-                                      <div class="row mb-3">
-                                        <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
-                                        <div class="col-sm-10">
-                                          <input type="password" class="form-control" id="inputPassword3" name="Password">
-                                        </div>
-                                      </div>
-                                      <div class="container mx-auto">
-                                        <p>No tiene cuenta? <a href="indexRegistro.html">Registrarse</a></p>
-                                      </div>
-                                      </div>
-                                      <div class="mx-auto mb-3 text-light bg-dark">
-                                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Iniciar</button>
-                                      </div>
-                                  </form>
-                                  
-                          </div>
-                          </div>
+                    <div class="modal fade" id="staticBackdropLogin" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <div class="modal-header bg-dark">
+                            <h1 class="modal-title fs-5 text-light" id="staticBackdropLabel">Iniciar Sesion</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body text-light bg-dark">
+
+                            <?php if(isset($_SESSION['login_error'])): ?>
+                                <p class="text-danger"><?php echo $_SESSION['login_error']; unset($_SESSION['login_error']); ?></p>
+                            <?php endif; ?>
+
+                            <form action="login.php" method="POST" autocomplete="off">
+                                <div class="row mb-3">
+                                    <label for="inputUsername" class="col-sm-2 col-form-label">Username</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="inputUsername" name="Username">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+                                    <div class="col-sm-10">
+                                        <input type="password" class="form-control" id="inputPassword" name="Password">
+                                    </div>
+                                </div>
+                                <div class="container mx-auto">
+                                    <p>No tiene cuenta? <a href="indexRegistro.php">Registrarse</a></p>
+                                </div>
+                                <div class="mx-auto mb-3 text-light bg-dark d-flex justify-content-center">
+                                    <button type="submit" class="btn btn-secondary">Iniciar</button>
+                                </div>
+                            </form>
+
+                            </div>
+                        </div>
+                        </div>
                       </div>
-                      </div>  
-                  </li>
-              </ul>
+                    </div>  
+                <?php endif; ?>    
               </div>
-          </div>
-      </nav>
+            </div>
+        </nav>
 
     </header>
 
