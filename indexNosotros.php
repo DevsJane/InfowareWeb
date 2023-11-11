@@ -82,7 +82,6 @@
                     <script>
                     $(document).ready(function(){
                         <?php if(isset($_SESSION['login_error'])): ?>
-                            // Volver a abrir el modal de inicio de sesión
                             $('#staticBackdropLogin').modal('show');
                         <?php endif; ?>
                     });
@@ -305,8 +304,8 @@
                                 <div class="col-lg-4">
                                     <div class="t-card">
                                         <div class="box front">
-                                            <img alt="" src="01.png">
-                                            <h2>Jesicca Doe</h2>
+                                            <img alt="" src="anon-testimony.webp">
+                                            <h2>Isabela González</h2>
                                             <h4>Usuario</h4>
                                             <p class="socials">
                                                 <i class="fa fa-facebook"></i>
@@ -317,8 +316,8 @@
                                         </div>
                                         <div class="box back">
                                             <span class="fa fa-quote-left"></span>
-                                            <p>
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores soluta quidem dolorem debitis. Minima, optio illum magni exercitationem eum laborum! Incidunt sequi repellat vero.
+                                            <p style="margin-top:60px;">
+                                            Como entusiasta de la tecnología, siempre estoy buscando las últimas noticias y tendencias. Esta página web ha sido una fuente invaluable de información para mí. Los artículos son siempre actuales, bien investigados y fáciles de entender.
                                             </p>
                                         </div>
                                     </div>
@@ -326,8 +325,8 @@
                                 <div class="col-lg-4">
                                     <div class="t-card">
                                         <div class="box front">
-                                            <img alt="" src="02.png">
-                                            <h2>Claire Chedd</h2>
+                                            <img alt="" src="anon-testimony.webp">
+                                            <h2>Horacio Pérez</h2>
                                             <h4>Usuario</h4>
                                             <p class="socials">
                                                 <i class="fa fa-facebook"></i>
@@ -338,8 +337,8 @@
                                         </div>
                                         <div class="box back">
                                             <span class="fa fa-quote-left"></span>
-                                            <p>
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores soluta quidem dolorem debitis. Minima, optio illum magni exercitationem eum laborum! Incidunt sequi repellat vero.
+                                            <p style="margin-top:60px;">
+                                            Soy un profesional de TI y necesito mantenerme al día con los avances tecnológicos. Esta página web ha sido una gran ayuda para mí. La calidad de los contenidos es excelente y siempre encuentro lo que necesito.
                                             </p>
                                         </div>
                                     </div>
@@ -347,7 +346,7 @@
                                 <div class="col-lg-4">
                                     <div class="t-card">
                                         <div class="box front">
-                                            <img alt="" src="03.png">
+                                            <img alt="" src="anon-testimony.webp">
                                             <h2>Maria Lopez</h2>
                                             <h4>Usuario</h4>
                                             <p class="socials">
@@ -359,8 +358,8 @@
                                         </div>
                                         <div class="box back">
                                             <span class="fa fa-quote-left"></span>
-                                            <p>
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores soluta quidem dolorem debitis. Minima, optio illum magni exercitationem eum laborum! Incidunt sequi repellat vero.
+                                            <p style="margin-top:60px;">
+                                            Como profesora, necesito encontrar formas efectivas de incorporar la tecnología en mi enseñanza. Esta página web ha sido una gran fuente de ideas e inspiración. Los consejos y trucos que he aprendido aquí han sido invaluables.
                                             </p>
                                         </div>
                                     </div>
@@ -372,8 +371,8 @@
                                 <div class="col-lg-4">
                                     <div class="t-card">
                                         <div class="box front">
-                                            <img alt="" src="03.png">
-                                            <h2>Jesicca Doe</h2>
+                                            <img alt="" src="anon-testimony.webp">
+                                            <h2>Graciela Fernández</h2>
                                             <h4>Usuario</h4>
                                             <p class="socials">
                                                 <i class="fa fa-facebook"></i>
@@ -384,8 +383,8 @@
                                         </div>
                                         <div class="box back">
                                             <span class="fa fa-quote-left"></span>
-                                            <p>
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores soluta quidem dolorem debitis. Minima, optio illum magni exercitationem eum laborum! Incidunt sequi repellat vero.
+                                            <p style="margin-top:60px;">
+                                            Esta página web es mi fuente de confianza para todas las cosas relacionadas con la tecnología. Siempre encuentro lo que necesito y más. ¡Es imprescindible para cualquier amante de la tecnología!
                                             </p>
                                         </div>
                                     </div>
@@ -393,8 +392,8 @@
                                 <div class="col-lg-4">
                                     <div class="t-card">
                                         <div class="box front">
-                                            <img alt="" src="02.png">
-                                            <h2>Claire Chedd</h2>
+                                            <img alt="" src="anon-testimony.webp">
+                                            <h2>Fabián Rodríguez</h2>
                                             <h4>Usuario</h4>
                                             <p class="socials">
                                                 <i class="fa fa-facebook"></i>
@@ -405,8 +404,8 @@
                                         </div>
                                         <div class="box back">
                                             <span class="fa fa-quote-left"></span>
-                                            <p>
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores soluta quidem dolorem debitis. Minima, optio illum magni exercitationem eum laborum! Incidunt sequi repellat vero.
+                                            <p style="margin-top:60px;">
+                                            Como estudiante de ingeniería, esta página web ha sido una herramienta invaluable para mis estudios. Los contenidos son claros, concisos y siempre al día con las últimas tendencias tecnológicas.
                                             </p>
                                         </div>
                                     </div>
@@ -414,8 +413,8 @@
                                 <div class="col-md-4">
                                     <div class="t-card">
                                         <div class="box front">
-                                            <img alt="" src="01.png">
-                                            <h2>Mary Joe</h2>
+                                            <img alt="" src="anon-testimony.webp">
+                                            <h2>Estela Martínez</h2>
                                             <h4>Usuario</h4>
                                             <p class="socials">
                                                 <i class="fa fa-facebook"></i>
@@ -426,8 +425,8 @@
                                         </div>
                                         <div class="box back">
                                             <span class="fa fa-quote-left"></span>
-                                            <p>
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores soluta quidem dolorem debitis. Minima, optio illum magni exercitationem eum laborum! Incidunt sequi repellat vero.
+                                            <p style="margin-top:60px;">
+                                            Esta página web ha transformado la forma en que me mantengo informado sobre la tecnología. Los artículos son informativos y fáciles de entender, incluso para alguien que no es un experto en tecnología como yo.
                                             </p>
                                         </div>
                                     </div>
@@ -439,8 +438,8 @@
                                 <div class="col-lg-4">
                                     <div class="t-card">
                                         <div class="box front">
-                                            <img alt="" src="02.png">
-                                            <h2>Jesicca Doe</h2>
+                                            <img alt="" src="anon-testimony.webp">
+                                            <h2>Damián Gómez</h2>
                                             <h4>Usuario</h4>
                                             <p class="socials">
                                                 <i class="fa fa-facebook"></i>
@@ -451,8 +450,8 @@
                                         </div>
                                         <div class="box back">
                                             <span class="fa fa-quote-left"></span>
-                                            <p>
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores soluta quidem dolorem debitis. Minima, optio illum magni exercitationem eum laborum! Incidunt sequi repellat vero.
+                                            <p style="margin-top:60px;">
+                                            Como empresaria, necesito mantenerme al día con los últimos avances tecnológicos. Esta página web ha sido una gran ayuda para mantenerme informada y tomar decisiones informadas para mi negocio.
                                             </p>
                                         </div>
                                     </div>
@@ -460,8 +459,8 @@
                                 <div class="col-lg-4">
                                     <div class="t-card">
                                         <div class="box front">
-                                            <img alt="" src="01.png">
-                                            <h2>Claire Chedd</h2>
+                                            <img alt="" src="anon-testimony.webp">
+                                            <h2>Clarisa Torres</h2>
                                             <h4>Usuario</h4>
                                             <p class="socials">
                                                 <i class="fa fa-facebook"></i>
@@ -472,8 +471,8 @@
                                         </div>
                                         <div class="box back">
                                             <span class="fa fa-quote-left"></span>
-                                            <p>
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores soluta quidem dolorem debitis. Minima, optio illum magni exercitationem eum laborum! Incidunt sequi repellat vero.
+                                            <p style="margin-top:60px;">
+                                            Soy un desarrollador de software y esta página web ha sido una gran fuente de información para mantenerme al día con las últimas tendencias y tecnologías en mi campo.
                                             </p>
                                         </div>
                                     </div>
@@ -481,8 +480,8 @@
                                 <div class="col-lg-4">
                                     <div class="t-card">
                                         <div class="box front">
-                                            <img alt="" src="03.png">
-                                            <h2>Mary Joe</h2>
+                                            <img alt="" src="anon-testimony.webp">
+                                            <h2>Benito Juárez</h2>
                                             <h4>Usuario</h4>
                                             <p class="socials">
                                                 <i class="fa fa-facebook"></i>
@@ -493,8 +492,8 @@
                                         </div>
                                         <div class="box back">
                                             <span class="fa fa-quote-left"></span>
-                                            <p>
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores soluta quidem dolorem debitis. Minima, optio illum magni exercitationem eum laborum! Incidunt sequi repellat vero.
+                                            <p style="margin-top:60px;">
+                                            Como madre, siempre estoy buscando formas de ayudar a mis hijos a aprender y crecer con la tecnología. Esta página web ha sido una gran fuente de ideas y recursos para hacer precisamente eso.
                                             </p>
                                         </div>
                                     </div>
