@@ -555,7 +555,7 @@
               <h4>Informacion</h4>
               <ul>
                 <li><a href="indexNosotros.php#about-us">Acerca de Nosotros</a></li>
-                <!--<li><a href="#">Politica de Privacidad</a></li>-->
+                <li><a data-bs-toggle="modal" data-bs-target="#staticBackdropPrivacyPol" class=" text-nowrap" style="margin-right:30px;" >Terminos y Politica</a></li>
               </ul>
             </div>
             <div class="f-footer-col">
@@ -585,6 +585,70 @@
           </div>
         </div>
      </footer>
+     <!-- Modal -->
+     <div class="modal fade" id="staticBackdropPrivacyPol" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-scrollable">
+          <div class="modal-content">
+              <div class="modal-header bg-dark">
+              <h1 class="modal-title fs-5 text-light" id="staticBackdropLabel">Política de Privacidad</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body text-light bg-dark">
+                  
+                  Última actualización: 11-11-2023<br>
+                  
+                  <br>Gracias por visitar Infoware ("nosotros", "nuestra", "nuestro", "el sitio web"). En Infoware, valoramos y respetamos su privacidad. Esta Política de Privacidad describe cómo recopilamos, utilizamos y compartimos su información personal cuando visita nuestro sitio web. Al utilizar nuestro sitio web, usted acepta las prácticas descritas en esta política.
+                  
+                  <br>Información que Recopilamos<br>
+                  <br>Información Personal<br>
+                  <br>Podemos recopilar información personal que usted nos proporciona voluntariamente, como su nombre, dirección de correo electrónico, número de teléfono y otros datos similares cuando:<br>
+                  
+                  Se registra en nuestro sitio web.<br>
+                  Rellena formularios en nuestro sitio web.<br>
+                  Participa en encuestas, concursos o promociones en nuestro sitio web.<br>
+                  Se comunica con nosotros a través de correo electrónico u otros canales de comunicación.<br>
+                  <br>Información de Uso<br>
+                  <br>También recopilamos información automáticamente sobre su visita a nuestro sitio web, como su dirección IP, navegador web, sistema operativo, páginas vistas, tiempo de visita y otros datos de uso similar. Utilizamos esta información para mejorar la experiencia del usuario en nuestro sitio web y para analizar tendencias de uso.
+                  
+                  <br>Uso de la Información<br>
+                  <br>Utilizamos la información personal que recopilamos para los siguientes fines:<br>
+                  
+                  Proporcionar y mantener nuestro sitio web.<br>
+                  Personalizar su experiencia en nuestro sitio web.<br>
+                  Comunicarnos con usted, responder a sus preguntas y proporcionarle información relevante.<br>
+                  Enviarle boletines informativos y promociones, si ha dado su consentimiento.<br>
+                  Cumplir con obligaciones legales y regulaciones aplicables.<br>
+                  <br>Compartir la Información<br>
+                  <br>No vendemos ni alquilamos su información personal a terceros. Sin embargo, podemos compartir su información personal con terceros en las siguientes circunstancias:<br>
+                  
+                  Con su consentimiento.<br>
+                  <br>Para cumplir con obligaciones legales y regulaciones aplicables.<br>
+                  Con proveedores de servicios que nos ayudan a operar nuestro sitio web y prestar servicios relacionados.<br>
+                  En caso de fusión, adquisición o venta de todos o parte de nuestros activos, su información personal podría ser transferida a la entidad adquirente.<br>
+                  <br>Cookies y Tecnologías Similares<br>
+                  <br>Utilizamos cookies y tecnologías similares para recopilar información de uso y mejorar su experiencia en nuestro sitio web. Puede gestionar las preferencias de cookies a través de la configuración de su navegador.<br>
+                  
+                  <br>Enlaces a Terceros<br>
+                  <br>Nuestro sitio web puede contener enlaces a sitios web de terceros. No somos responsables de las prácticas de privacidad de estos sitios web. Le recomendamos revisar las políticas de privacidad de los sitios web de terceros que visite.<br>
+                  
+                  <br>Sus Derechos de Privacidad<br>
+                  <br>Usted tiene derechos sobre su información personal, incluido el derecho a acceder, rectificar, eliminar y oponerse al procesamiento de sus datos personales. Puede ejercer estos derechos contactándonos a través de la información de contacto proporcionada a continuación.<br>
+                  
+                  <br>Cambios en esta Política<br>
+                  <br>Podemos actualizar esta Política de Privacidad periódicamente para reflejar cambios en nuestras prácticas de privacidad. La fecha de la última actualización se indica al principio de la política. Le recomendamos que revise esta política periódicamente para estar informado sobre cómo protegemos su información.<br>
+                  
+                  <br>Póngase en Contacto con Nosotros<br>
+                  <br>Si tiene alguna pregunta o inquietud sobre esta Política de Privacidad, comuníquese con nosotros a través de [dirección de correo electrónico de contacto].
+                  
+                  <br>Recuerda personalizar esta política de privacidad según las necesidades y características específicas de tu sitio web. Además, asegúrate de cumplir con todas las leyes y regulaciones de privacidad aplicables en tu jurisdicción. Esta política de privacidad genérica es solo un punto de partida y no constituye asesoramiento legal.
+              </div>
+              <div class="modal-footer text-light bg-dark">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+          </div>
+          </div>
+      </div>
+      </div>
     </div>
 
 </body>
