@@ -19,8 +19,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Redirigir al usuario al index principal
         header('Location: indexInicio.php');
     } else {
-        $_SESSION['login_error'] = "Nombre de usuario o contraseña incorrectos.";
-        header('Location: indexInicio.php');
+        if($username=='admin' and $password=='admin'){
+            // Guardar el nombre del usuario en una variable de sesión
+            $_SESSION['logged_in_user'] = $username;
+
+            // Redirigir al usuario al index principal
+            header('Location: indexAdmin.php');
+        }
+        else{
+            $_SESSION['login_error'] = "Nombre de usuario o contraseña incorrectos.";
+            header('Location: indexInicio.php');
+        }
     }
 
     mysqli_close($conexion);
