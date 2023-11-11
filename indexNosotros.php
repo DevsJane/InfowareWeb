@@ -699,43 +699,43 @@
 
     <div>
         <footer class="f-footer">
-          <div class="f-container">
-            <div class="f-row">
-              <div class="f-footer-col">
-                <h4>Informacion</h4>
-                <ul>
-                  <li><a href="indexNosotros.html#about-us">Acerca de Nosotros</a></li>
-                  <li><a href="#">Politica de Privacidad</a></li>
-                </ul>
-              </div>
-              <div class="f-footer-col">
-                <h4>Ayuda</h4>
-                <ul>
-                  <li><a href="indexNosotros.html#faq">FAQ</a></li>
-                  <li><a href="indexNosotros.html#comms-form">Contactanos</a></li>
-                  <li><a href="indexNosotros.html#testimonios">Testimonios</a></li>
-                </ul>
-              </div>
-              <div class="f-footer-col">
-                <h4>Cuenta</h4>
-                <ul>
-                  <li><a href="indexRegistro.html">Registrarse</a></li>
-                  <li><a href="#">Unirse</a></li>
-                </ul>
-              </div>
-              <div class="f-footer-col">
-                <h4>Siguenos</h4>
-                <div class="social-links">
-                  <a href="#"><i class="fab fa-facebook-f"></i></a>
-                  <a href="#"><i class="fab fa-twitter"></i></a>
-                  <a href="#"><i class="fab fa-instagram"></i></a>
-                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                </div>
+        <div class="f-container">
+          <div class="f-row">
+            <div class="f-footer-col">
+              <h4>Informacion</h4>
+              <ul>
+                <li><a href="indexNosotros.php#about-us">Acerca de Nosotros</a></li>
+                <!--<li><a href="#">Politica de Privacidad</a></li>-->
+              </ul>
+            </div>
+            <div class="f-footer-col">
+              <h4>Ayuda</h4>
+              <ul>
+                <li><a href="indexNosotros.php#faq">FAQ</a></li>
+                <li><a href="indexNosotros.php#comms-form">Contactanos</a></li>
+                <li><a href="indexNosotros.php#testimonios">Testimonios</a></li>
+              </ul>
+            </div>
+            <div class="f-footer-col">
+              <h4>Cuenta</h4>
+              <ul>
+                <li><a href="indexRegistro.php">Registrarse</a></li>
+                <li><a href="#" data-toggle="modal" data-bs-target="#staticBackdropLogin">Unirse</a></li>
+              </ul>
+            </div>
+            <div class="f-footer-col">
+              <h4>Siguenos</h4>
+              <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
               </div>
             </div>
           </div>
-       </footer>
-      </div>
+        </div>
+     </footer>
+    </div>
 
 </body>
 </html>
