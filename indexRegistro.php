@@ -129,29 +129,33 @@
             </div>
             <div class="carousel-inner mx">
               <div class="carousel-item active">
-                <img src="carrusel-redes.jpeg" class="d-block w-100" alt="..." height="400px">
+                <img src="carrusel-redes.png" class="d-block w-100" alt="..." height="400px">
                 <div class="carousel-caption d-none d-md-block">
-                    <div class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">
+                    <div class="p-3 border border-dark rounded-3 secondary-bg-color">
                         <h5>Conoce nuestras redes sociales</h5>
-                        <p>Te invitamos a conocer las redes sociales de nuestra pagina!</p>
+                        <p class="p-color">Te invitamos a conocer las redes sociales de nuestra pagina!</p>
                     </div>
                 </div>
               </div>
               <div class="carousel-item">
-                <img src="carrusel-register.jpeg" class="d-block w-100" alt="..." height="400px">
+                <a href="indexRegistro.php">
+                  <img src="carrusel-registration.jpg" class="d-block w-100" alt="..." height="400px">
+                </a>
                 <div class="carousel-caption d-none d-md-block">
-                    <div class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">
+                    <div class="p-3 border border-dark rounded-3 secondary-bg-color">
                         <h5>Registrate</h5>
-                        <p>Si quieres unirte a esta enorme comunidad, te invitamos a registrarte en nuestra Web.</p>
+                        <p class="p-color">Si quieres unirte a esta enorme comunidad, te invitamos a registrarte en nuestra Web.</p>
                     </div>
                 </div>
               </div>
               <div class="carousel-item">
-                <img src="carrusel-comm.jpg" class="d-block w-100" alt="..." height="400px">
+                <a href="indexNosotros.php#comms-form">
+                  <img src="carrusel-com.jpg" class="d-block w-100" alt="..." height="400px">
+                </a>
                 <div class="carousel-caption d-none d-md-block">
-                    <div class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">
+                    <div class="p-3 border border-dark rounded-3 secondary-bg-color">
                         <h5>Comunicate con nosotros</h5>
-                        <p>Tenemos un canal de comunicacion para poder consultar cualquier cosa.</p>
+                        <p class="p-color">Tenemos un canal de comunicacion para poder consultar cualquier cosa.</p>
                     </div>
                 </div>
               </div>

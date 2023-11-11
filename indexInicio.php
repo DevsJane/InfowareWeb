@@ -159,53 +159,53 @@
 
       <section>
         <div id="carouselExampleCaptions" class="carousel slide mx-5">
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+              <div class="carousel-inner mx">
+                <div class="carousel-item active">
+                  <img src="carrusel-redes.png" class="d-block w-100" alt="..." height="400px">
+                  <div class="carousel-caption d-none d-md-block">
+                      <div class="p-3 border border-dark rounded-3 secondary-bg-color">
+                          <h5>Conoce nuestras redes sociales</h5>
+                          <p class="p-color">Te invitamos a conocer las redes sociales de nuestra pagina!</p>
+                      </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <a href="indexRegistro.php">
+                    <img src="carrusel-registration.jpg" class="d-block w-100" alt="..." height="400px">
+                  </a>
+                  <div class="carousel-caption d-none d-md-block">
+                      <div class="p-3 border border-dark rounded-3 secondary-bg-color">
+                          <h5>Registrate</h5>
+                          <p class="p-color">Si quieres unirte a esta enorme comunidad, te invitamos a registrarte en nuestra Web.</p>
+                      </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <a href="indexNosotros.php#comms-form">
+                    <img src="carrusel-com.jpg" class="d-block w-100" alt="..." height="400px">
+                  </a>
+                  <div class="carousel-caption d-none d-md-block">
+                      <div class="p-3 border border-dark rounded-3 secondary-bg-color">
+                          <h5>Comunicate con nosotros</h5>
+                          <p class="p-color">Tenemos un canal de comunicacion para poder consultar cualquier cosa.</p>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
           </div>
-          <div class="carousel-inner mx">
-            <div class="carousel-item active">
-              <img src="carrusel-redes.jpeg" class="d-block w-100" alt="..." height="400px">
-              <div class="carousel-caption d-none d-md-block">
-                  <div class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">
-                      <h5>Conoce nuestras redes sociales</h5>
-                      <p>Te invitamos a conocer las redes sociales de nuestra pagina!</p>
-                  </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img src="carrusel-register.jpeg" class="d-block w-100" alt="..." height="400px">
-              <div class="carousel-caption d-none d-md-block">
-                  <div class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">
-                      <h5>Registrate</h5>
-                      <p>Si quieres unirte a esta enorme comunidad, te invitamos a registrarte en nuestra Web.</p>
-                  </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img src="carrusel-comm.jpg" class="d-block w-100" alt="..." height="400px">
-              <div class="carousel-caption d-none d-md-block">
-                  <div class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">
-                      <h5>Comunicate con nosotros</h5>
-                      <p>Tenemos un canal de comunicacion para poder consultar cualquier cosa.</p>
-                  </div>
-              </div>
-            </div>
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
-      </section>
-
-      <section>
-        
       </section>
 
     </main>
