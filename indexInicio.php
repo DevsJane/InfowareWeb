@@ -37,6 +37,7 @@
           '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' .
           '</div>';
       //Falta que el usuario quede Logueado cuando cambia la contrasenia.
+      unset($_SESSION['RecoveredUser']);
     }
     if (isset($_SESSION['NotRecoveredUser'])) {
       $not_recovered_user = $_SESSION['NotRecoveredUser'];
@@ -132,7 +133,7 @@
                                 </div>
 
                                 <div class="container mx-auto">
-                                    <p>Olvido la contrasenia?<a href="indexPasswordRecovery.php">Recuperar Contrasenia</a></p>
+                                    <p>Olvido la contrasenia? <a href="indexPasswordRecovery.php">Recuperar Contrasenia</a></p>
                                 </div>
                                
                                 <div class="container mx-auto">

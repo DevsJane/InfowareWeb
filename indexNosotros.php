@@ -60,12 +60,12 @@
                 </ul>
                 <img src="icono-usuario.png" alt="IconoUsuario" style="margin:5px;">
                 <?php if(isset($_SESSION['logged_in_user'])): ?>
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonN" data-bs-toggle="dropdown" aria-expanded="false"
+                    <div class="dropdown ">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false"
                         style="background:none; border:none;margin-right:20px;">
                             <?php echo $_SESSION['logged_in_user']; ?>
                         </button>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButtonN">
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
                             <li><a class="dropdown-item" href="logout.php">Cerrar sesión</a></li>
                         </ul>
                     </div>
@@ -113,6 +113,11 @@
                                         <input type="password" class="form-control" id="inputPassword" name="Password">
                                     </div>
                                 </div>
+
+                                <div class="container mx-auto">
+                                    <p>Olvido la contrasenia? <a href="indexPasswordRecovery.php">Recuperar Contrasenia</a></p>
+                                </div>
+                               
                                 <div class="container mx-auto">
                                     <p>No tiene cuenta? <a href="indexRegistro.php">Registrarse</a></p>
                                 </div>

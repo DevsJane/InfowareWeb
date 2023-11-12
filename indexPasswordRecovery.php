@@ -76,7 +76,10 @@
               <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
-                
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="indexInicio.php">Home</a>
+                </ul>
                 <img src="icono-usuario.png" alt="IconoUsuario" style="margin:5px;">
                 <?php if(isset($_SESSION['logged_in_user'])): ?>
                     <div class="dropdown ">
@@ -154,7 +157,7 @@
 
     <main>
 
-      <section>
+      <section class="section-margin">
         <form action="passwordRecovery.php" method="POST" autocomplete="off">
           <input type="hidden" name="url_origen" value="<?php echo basename($_SERVER['REQUEST_URI']); ?>">
           <input type="hidden" class="form-control mb-3" name="id" placeholder="ID">
@@ -172,7 +175,13 @@
                 <div class="col">
                     <input type="password" class="form-control w-75 mx-auto" name="Password" placeholder="Nueva Contrasenia" required>
                 </div>
+                <div class="col">
+                    <input type="password" class="form-control w-75 mx-auto" name="RePassword" placeholder="Repetir Nueva Contrasenia" required>
+                </div>
               </div>
+               <?php if(isset($_SESSION['NotSamePass'])): ?>
+                    <p class="text-danger d-flex mx-auto"><?php echo $_SESSION['NotSamePass']; unset($_SESSION['NotSamePass']); ?></p>
+                <?php endif; ?>
               </div>
               <div class="d-flex justify-content-center align-items-center">
                   <button type="submit" class="btn btn-primary">Recuperar contrasenia</button>

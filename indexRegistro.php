@@ -67,7 +67,6 @@
                     <script>
                     $(document).ready(function(){
                         <?php if(isset($_SESSION['login_error'])): ?>
-                            // Volver a abrir el modal de inicio de sesión
                             $('#staticBackdropLogin').modal('show');
                         <?php endif; ?>
                     });
@@ -99,6 +98,11 @@
                                         <input type="password" class="form-control" id="inputPassword" name="Password">
                                     </div>
                                 </div>
+
+                                <div class="container mx-auto">
+                                    <p>Olvido la contrasenia? <a href="indexPasswordRecovery.php">Recuperar Contrasenia</a></p>
+                                </div>
+                               
                                 <div class="container mx-auto">
                                     <p>No tiene cuenta? <a href="indexRegistro.php">Registrarse</a></p>
                                 </div>
