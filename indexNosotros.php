@@ -679,20 +679,20 @@
                         <div class="col-sm-12 col-lg-6">
                             <div class="right">
                                <i class="fa fa-caret-left"></i>
-                                <form>
+                                <form action="contactUs.php" method="POST" autocomplete="off">
                                   <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Your Name</label>
-                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                    <label for="ContactUsName1" class="form-label">Tu nombre</label>
+                                    <input type="text" class="form-control" name="Nombre" id="ContactUsName1" aria-describedby="emailHelp" required>
                                   </div>
                                   <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Email address</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                    <label for="ContactUsEmail1" class="form-label">Tu Email</label>
+                                    <input type="email" class="form-control" name="Email" id="ContactUsEmail1" aria-describedby="emailHelp" required>
                                   </div>
                                   <div class="mb-3">
-                                    <label for="exampleInputPassword1" class="form-label">Message</label>
-                                      <textarea type="password" class="form-control" id="exampleInputPassword1"></textarea>
+                                    <label for="ContactUsMessage1" class="form-label">Mensaje</label>
+                                      <textarea type="password" class="form-control" name="Mensaje" id="ContactUsMessage1" required></textarea>
                                   </div>
-                                  <button type="submit" class="btn btn-primary">Submit</button>
+                                  <button type="submit" class="btn btn-primary">Enviar</button>
                                 </form>
                             </div>
                         </div>

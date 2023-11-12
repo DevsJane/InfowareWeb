@@ -1,3 +1,13 @@
+<?php 
+    include("conexion.php");
+
+    $sql="SELECT * FROM mensajes";
+    $query=mysqli_query($conexion,$sql);
+
+    $row=mysqli_fetch_array($query);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,62 +15,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Infoware Web</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    
     <!--Links para footer-->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <!---->
     <?php
+    // Iniciar la sesión si aún no se ha iniciado
     if (session_status() == PHP_SESSION_NONE) {
-      session_start();
+        session_start();
     }
 
+    if (isset($_SESSION['deleted_user'])) {
+        $deleted_user = $_SESSION['deleted_user'];
+
+        echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">' .
+            'El usuario ' . $deleted_user . ' ha sido eliminado.' .
+            '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' .
+            '</div>';
+
+        unset($_SESSION['deleted_user']);
+    }
     if (isset($_SESSION['created_user'])) {
       $created_user = $_SESSION['created_user'];
 
-      // Mostrar la alerta con el nombre del usuario
+      // Alerta Nombre de Usuario
       echo '<div class="alert alert-success alert-dismissible fade show" role="alert">' .
-          'El usuario ' . $created_user . ' ha sido registrado.' .
+          'El usuario ' . $created_user . ' ha sido ingresado.' .
           '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' .
           '</div>';
 
       unset($_SESSION['created_user']);
     }
+    if (isset($_SESSION['updated_user'])) {
+      $updated_user = $_SESSION['updated_user'];
 
-    if (isset($_SESSION['RecoveredUser'])) {
-      $recovered_user = $_SESSION['RecoveredUser'];
-
-      // Mostrar la alerta con el nombre del usuario
-      echo '<div class="alert alert-success alert-dismissible fade show" role="alert">' .
-          'La contrasenia del usuario ' . $recovered_user . ' ha sido actualizada.' .
-          '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' .
-          '</div>';
-      //Falta que el usuario quede Logueado cuando cambia la contrasenia.
-      unset($_SESSION['RecoveredUser']);
-    }
-    if (isset($_SESSION['NotRecoveredUser'])) {
-      $not_recovered_user = $_SESSION['NotRecoveredUser'];
-
-      // Mostrar la alerta con el nombre del usuario
-      echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">' .
-          'El Email y la contrasenia no coinciden' .
+      echo '<div class="alert alert-primary alert-dismissible fade show" role="alert">' .
+          'El usuario ' . $updated_user . ' ha sido actualizado.' .
           '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' .
           '</div>';
 
-      unset($_SESSION['NotRecoveredUser']);
+      unset($_SESSION['updated_user']);
     }
-    if (isset($_SESSION['MessageSubmited'])) {
-      $message_submited = $_SESSION['MessageSubmited'];
-
-      echo '<div class="alert alert-success alert-dismissible fade show" role="alert">' .
-          ''.$message_submited.''.
-          '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' .
-          '</div>';
-
-      unset($_SESSION['MessageSubmited']);
+    if (isset($_SESSION['MessageReplied'])) {
+        $message_replied = $_SESSION['MessageReplied'];
+  
+        echo '<div class="alert alert-primary alert-dismissible fade show" role="success">' .
+            'El mensaje de ID ' . $message_replied . ' ha sido respondido.' .
+            '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' .
+            '</div>';
+  
+        unset($_SESSION['MessageReplied']);
     }
+
     ?>
+
 
 </head>
 <body>
@@ -74,17 +86,14 @@
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
               </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="indexInicio.php">Home</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="indexNosotros.php">Acerca de Nosotros</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="indexRegistro.php">Registro</a>
-                    </li>
+                  <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="indexAdmin.php">Usuarios</a>
+                  </li>
+                  <li class="nav-item">
+                  <a class="nav-link active" href="indexMensajes.php">Mensajes</a>
+                  </li>
                 </ul>
                 <img src="icono-usuario.png" alt="IconoUsuario" style="margin:5px;">
                 <?php if(isset($_SESSION['logged_in_user'])): ?>
@@ -141,11 +150,6 @@
                                         <input type="password" class="form-control" id="inputPassword" name="Password">
                                     </div>
                                 </div>
-
-                                <div class="container mx-auto">
-                                    <p>Olvido la contrasenia? <a href="indexPasswordRecovery.php">Recuperar Contrasenia</a></p>
-                                </div>
-                               
                                 <div class="container mx-auto">
                                     <p>No tiene cuenta? <a href="indexRegistro.php">Registrarse</a></p>
                                 </div>
@@ -168,96 +172,112 @@
 
     <main>
 
-      <section class="section-margin">
+      <section>
         <div id="carouselExampleCaptions" class="carousel slide mx-5">
-              <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-              </div>
-              <div class="carousel-inner mx">
-                <div class="carousel-item active">
-                  <img src="carrusel-redes.png" class="d-block w-100" alt="..." height="400px">
-                  <div class="carousel-caption d-none d-md-block">
-                      <div class="p-3 border border-dark rounded-3 secondary-bg-color">
-                          <h5>Conoce nuestras redes sociales</h5>
-                          <p class="p-color">Te invitamos a conocer las redes sociales de nuestra pagina!</p>
-                      </div>
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <a href="indexRegistro.php">
-                    <img src="carrusel-registration.jpg" class="d-block w-100" alt="..." height="400px">
-                  </a>
-                  <div class="carousel-caption d-none d-md-block">
-                      <div class="p-3 border border-dark rounded-3 secondary-bg-color">
-                          <h5>Registrate</h5>
-                          <p class="p-color">Si quieres unirte a esta enorme comunidad, te invitamos a registrarte en nuestra Web.</p>
-                      </div>
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <a href="indexNosotros.php#comms-form">
-                    <img src="carrusel-com.jpg" class="d-block w-100" alt="..." height="400px">
-                  </a>
-                  <div class="carousel-caption d-none d-md-block">
-                      <div class="p-3 border border-dark rounded-3 secondary-bg-color">
-                          <h5>Comunicate con nosotros</h5>
-                          <p class="p-color">Tenemos un canal de comunicacion para poder consultar cualquier cosa.</p>
-                      </div>
-                  </div>
-                </div>
-              </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
-          </div>
-      </section>
-
-      <section class="section-margin">
-      
-      </section>
-
-      <section class="section-margin">
-        <div class="container m-5 mx-auto w-100">
-            <div class="row m-auto">
-              <div class="col-sm">
-                <div class="card bg-dark text-light">
-                  <img src="card-aboutus.jpg" class="card-img-top" alt="..." height="200px">
-                  <div class="card-body m-4">
-                    <h5 class="card-title">Acerca de Nosotros</h5>
-                    <p class="card-text">Seccion donde explicamos detalladamente quienes somos, nuestros objetivos y propositos.</p>
-                    <a href="indexNosotros.php" class="btn btn-primary">Ir</a>
-                  </div>
-                </div>
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
-            <div class="col-sm">
-                <div class="card bg-dark text-light">
-                  <img src="card-comm.jpg" class="card-img-top" alt="..." height="200px">
-                  <div class="card-body m-4">
-                    <h5 class="card-title">Envianos un mensaje.</h5>
-                    <p class="card-text">Tenemos un apartado para mensajes, donde se puede enviar feedback de cualquier tipo.</p>
-                    <a href="indexNosotros.php#comms-form" class="btn btn-primary">Ir</a>
-                  </div>
+            <div class="carousel-inner mx">
+              <div class="carousel-item active">
+                <img src="carrusel-redes.png" class="d-block w-100" alt="..." height="400px">
+                <div class="carousel-caption d-none d-md-block">
+                    <div class="p-3 border border-dark rounded-3 secondary-bg-color">
+                        <h5>Conoce nuestras redes sociales</h5>
+                        <p class="p-color">Te invitamos a conocer las redes sociales de nuestra pagina!</p>
+                    </div>
                 </div>
               </div>
+              <div class="carousel-item">
+                <a href="indexRegistro.php">
+                  <img src="carrusel-registration.jpg" class="d-block w-100" alt="..." height="400px">
+                </a>
+                <div class="carousel-caption d-none d-md-block">
+                    <div class="p-3 border border-dark rounded-3 secondary-bg-color">
+                        <h5>Registrate</h5>
+                        <p class="p-color">Si quieres unirte a esta enorme comunidad, te invitamos a registrarte en nuestra Web.</p>
+                    </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <a href="indexNosotros.php#comms-form">
+                  <img src="carrusel-com.jpg" class="d-block w-100" alt="..." height="400px">
+                </a>
+                <div class="carousel-caption d-none d-md-block">
+                    <div class="p-3 border border-dark rounded-3 secondary-bg-color">
+                        <h5>Comunicate con nosotros</h5>
+                        <p class="p-color">Tenemos un canal de comunicacion para poder consultar cualquier cosa.</p>
+                    </div>
+                </div>
               </div>
             </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
         </div>
       </section>
 
       <section class="section-margin">
-        <div class="container w-100 d-flex justify-content-center align-items-center my-5">
-            <img src="logo-nav.png" width="200px">
-        </div>
-        <div class="container w-50 d-flex justify-content-center text-center align-items-center my-5">
-            "Explora el mundo de la informática y descubre las últimas innovaciones tecnológicas. Desde la programación hasta la ciberseguridad, nuestro sitio te brinda acceso a conocimientos clave y recursos para mantenerte al día en este emocionante campo. ¡Bienvenido a la revolución digital!"
-        </div>
+        <div class="col-md-12 d-flex mr-5 mb-5">
+            <table class="table table-dark" style="width:2500px;height:200px;">
+                <thead class="table-success table-striped table-secondary" >
+                    <tr>
+                        <th style="text-align: center;padding: 15px;">ID</th>
+                        <th style="text-align: center;padding: 15px;">Email</th>
+                        <th style="text-align: center;padding: 15px;">Nombre</th>
+                        <th style="text-align: center;padding: 15px; width:400px;">Mensaje</th>
+                        <th style="text-align: center;padding: 15px;"></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                        <?php
+                            $sql="SELECT * FROM mensajes";
+                            $query=mysqli_query($conexion,$sql);
+                            while($row=mysqli_fetch_array($query)){
+                        ?>
+                            <tr>
+                                <th><?php  echo $row['id']?></th>
+                                <th><?php  echo $row['email']?></th>
+                                <th><?php  echo $row['nombre']?></th>
+                                <th><?php  echo $row['mensaje']?></th>          
+                                <th><a class="btn btn-info" data-bs-toggle="modal" data-bs-target="#ReplyModal<?php echo $row['id'] ?>">Responder</a></th>
+                                <!--Notificacion Reply-->
+                                <div class="modal" tabindex="-1" id="ReplyModal<?php echo $row['id'] ?>">
+                                    <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header bg-dark">
+                                        <h5 class="modal-title">Respuesta</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body bg-dark">
+                                            <p>Mensaje: <?php  echo $row['mensaje']?></p>
+                                            <form action="ReplyMessage.php" method="POST">
+                                                <input type="hidden" class="form-control" name="id" placeholder="ID" value="<?php echo $row['id']  ?>">
+                                                <textarea cols="50" rows="10" class="form-control" name="Mensaje"></textarea>
+                                            
+                                        </div>
+                                        <div class="modal-footer bg-dark">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Salir</button>
+                                        <button type="submit" class="btn btn-success">Enviar</button>
+                                        </div>
+                                            </form>     
+                                    </div>
+                                    </div>
+                                </div>                                       
+                            </tr>
+                        <?php 
+                            }
+                        ?>
+                </tbody>
+            </table>
+        </div>                       
       </section>
 
     </main>
@@ -368,3 +388,4 @@
 
 </body>
 </html>
+
