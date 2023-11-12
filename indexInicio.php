@@ -158,7 +158,7 @@
 
     <main>
 
-      <section>
+      <section class="section-margin">
         <div id="carouselExampleCaptions" class="carousel slide mx-5">
               <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -207,6 +207,47 @@
                 <span class="visually-hidden">Next</span>
               </button>
           </div>
+      </section>
+
+      <section class="section-margin">
+      
+      </section>
+
+      <section class="section-margin">
+        <div class="container m-5 mx-auto w-100">
+            <div class="row m-auto">
+              <div class="col-sm">
+                <div class="card bg-dark text-light">
+                  <img src="card-aboutus.jpg" class="card-img-top" alt="..." height="200px">
+                  <div class="card-body m-4">
+                    <h5 class="card-title">Acerca de Nosotros</h5>
+                    <p class="card-text">Seccion donde explicamos detalladamente quienes somos, nuestros objetivos y propositos.</p>
+                    <a href="indexNosotros.php" class="btn btn-primary">Ir</a>
+                  </div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="card bg-dark text-light">
+                  <img src="card-comm.jpg" class="card-img-top" alt="..." height="200px">
+                  <div class="card-body m-4">
+                    <h5 class="card-title">Envianos un mensaje.</h5>
+                    <p class="card-text">Tenemos un apartado para mensajes, donde se puede enviar feedback de cualquier tipo.</p>
+                    <a href="indexNosotros.php#comms-form" class="btn btn-primary">Ir</a>
+                  </div>
+                </div>
+              </div>
+              </div>
+            </div>
+        </div>
+      </section>
+
+      <section class="section-margin">
+        <div class="container w-100 d-flex justify-content-center align-items-center my-5">
+            <img src="logo-nav.png" width="200px">
+        </div>
+        <div class="container w-50 d-flex justify-content-center text-center align-items-center my-5">
+            "Explora el mundo de la informática y descubre las últimas innovaciones tecnológicas. Desde la programación hasta la ciberseguridad, nuestro sitio te brinda acceso a conocimientos clave y recursos para mantenerte al día en este emocionante campo. ¡Bienvenido a la revolución digital!"
+        </div>
       </section>
 
     </main>
