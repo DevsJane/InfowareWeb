@@ -244,19 +244,24 @@
                                     <input type="text" class="form-control w-75 mx-auto" name="Username" placeholder="Username" aria-label="Username" required>
                                   </div>
                               </div>
+                              <?php if(isset($_SESSION['Failed_Email'])): ?>
+                                <p class="text-danger" style="text-align: left; padding-left: 125px;"><?php echo $_SESSION['Failed_Email']; unset($_SESSION['Failed_Email']); ?></p>
+                              <?php endif; ?>
+
+                              <?php if(isset($_SESSION['Failed_Username'])): ?>
+                                <p class="text-danger" style="text-align: right; padding-right: 125px;"><?php echo $_SESSION['Failed_Username']; unset($_SESSION['Failed_Username']); ?></p>
+                              <?php endif; ?>
                               <div class="row mb-3">
                                 <div class="col">
                                     <input type="password" class="form-control w-75 mx-auto" name="Password" placeholder="Contrasenia" required>
                                 </div>
                                 <div class="col">
-                                    <input type="password" class="form-control w-75 mx-auto" name="Re-Password" placeholder="Confirmar Contrasenia" required>
+                                    <input type="password" class="form-control w-75 mx-auto" name="ConfirmPassword" placeholder="Confirmar Contrasenia" required>
                                 </div>
                               </div>
-                              <!--
-                              <div class="mb-3 mx-auto">
-                                  <input type="email" class="form-control w-75 mx-auto" id="email" placeholder="Email">
-                              </div>
-                              -->
+                              <?php if(isset($_SESSION['Failed_Password'])): ?>
+                                <p class="text-danger" style="text-align: right; padding-right: 125px;"><?php echo $_SESSION['Failed_Password']; unset($_SESSION['Failed_Password']); ?></p>
+                              <?php endif; ?>
                               <div class="row mb-3">
                                   <div class="col">
                                     <select class="form-select w-75 mx-auto" name="Sexo" aria-label="Default select example" required>

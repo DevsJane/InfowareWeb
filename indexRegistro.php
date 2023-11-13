@@ -18,6 +18,39 @@
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
     }
+
+    if (isset($_SESSION['deleted_user'])) {
+        $deleted_user = $_SESSION['deleted_user'];
+
+        echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">' .
+            'El usuario ' . $deleted_user . ' ha sido eliminado.' .
+            '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' .
+            '</div>';
+
+        unset($_SESSION['deleted_user']);
+    }
+    if (isset($_SESSION['created_user'])) {
+      $created_user = $_SESSION['created_user'];
+
+      // Alerta Nombre de Usuario
+      echo '<div class="alert alert-success alert-dismissible fade show" role="alert">' .
+          'El usuario ' . $created_user . ' ha sido ingresado.' .
+          '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' .
+          '</div>';
+
+      unset($_SESSION['created_user']);
+    }
+    if (isset($_SESSION['updated_user'])) {
+      $updated_user = $_SESSION['updated_user'];
+
+      echo '<div class="alert alert-primary alert-dismissible fade show" role="alert">' .
+          'El usuario ' . $updated_user . ' ha sido actualizado.' .
+          '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' .
+          '</div>';
+
+      unset($_SESSION['updated_user']);
+    }
+
     ?>
 </head>
 <body>
@@ -195,19 +228,24 @@
                     <input type="text" class="form-control w-75 mx-auto" name="Username" placeholder="Username" aria-label="Username" required>
                   </div>
               </div>
+              <?php if(isset($_SESSION['Failed_Email'])): ?>
+                <p class="text-danger" style="text-align: left; padding-left: 125px;"><?php echo $_SESSION['Failed_Email']; unset($_SESSION['Failed_Email']); ?></p>
+              <?php endif; ?>
+
+              <?php if(isset($_SESSION['Failed_Username'])): ?>
+                <p class="text-danger" style="text-align: right; padding-right: 125px;"><?php echo $_SESSION['Failed_Username']; unset($_SESSION['Failed_Username']); ?></p>
+              <?php endif; ?>
               <div class="row mb-3">
                 <div class="col">
                     <input type="password" class="form-control w-75 mx-auto" name="Password" placeholder="Contrasenia" required>
                 </div>
                 <div class="col">
-                    <input type="password" class="form-control w-75 mx-auto" name="Re-Password" placeholder="Confirmar Contrasenia" required>
+                    <input type="password" class="form-control w-75 mx-auto" name="ConfirmPassword" placeholder="Confirmar Contrasenia" required>
                 </div>
               </div>
-              <!--
-              <div class="mb-3 mx-auto">
-                  <input type="email" class="form-control w-75 mx-auto" id="email" placeholder="Email">
-              </div>
-              -->
+              <?php if(isset($_SESSION['Failed_Password'])): ?>
+                <p class="text-danger" style="text-align: right; padding-right: 125px;"><?php echo $_SESSION['Failed_Password']; unset($_SESSION['Failed_Password']); ?></p>
+              <?php endif; ?>
               <div class="row mb-3">
                   <div class="col">
                     <select class="form-select w-75 mx-auto" name="Sexo" aria-label="Default select example" required>

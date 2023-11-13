@@ -83,64 +83,87 @@ $row=mysqli_fetch_array($query);
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
               </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="indexInicio.html">Home</a>
+                  <a class="nav-link" aria-current="page" href="indexAdmin.php">Usuarios</a>
                   </li>
                   <li class="nav-item">
-                  <a class="nav-link" href="indexNosotros.html">Acerca de Nosotros</a>
+                  <a class="nav-link" href="indexMensajes.php">Mensajes</a>
                   </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="indexRegistro.html">Registro</a>
-                  </li>
-                  <li class="nav-item">
-                      <!-- Button trigger modal -->
-                      <button type="button" class="btn nav-link" data-bs-toggle="modal" data-bs-target="#staticBackdropLogin" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
-                          Iniciar Sesion
-                      </button>
+                </ul>
+                <img src="icono-usuario.png" alt="IconoUsuario" style="margin:5px;">
+                <?php if(isset($_SESSION['logged_in_user'])): ?>
+                    <div class="dropdown ">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false"
+                        style="background:none; border:none;margin-right:20px;">
+                            <?php echo $_SESSION['logged_in_user']; ?>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                            <li><a class="dropdown-item" href="logout.php">Cerrar sesión</a></li>
+                        </ul>
+                    </div>
+                <?php else: ?>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn nav-link" data-bs-toggle="modal" data-bs-target="#staticBackdropLogin" 
+                      style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-right:20px;">
+                        Iniciar Sesion
+                    </button>
+                    <!-- Modal -->
+                    <!-- Jquery -->
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-                      <!-- Modal -->
-                      <div class="modal fade" id="staticBackdropLogin" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                          <div class="modal-dialog modal-dialog-scrollable">
-                          <div class="modal-content">
-                              <div class="modal-header bg-dark">
-                              <h1 class="modal-title fs-5 text-light" id="staticBackdropLabel">Iniciar Sesion</h1>
-                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                              </div>
-                              <div class="modal-body text-light bg-dark">
+                    <script>
+                    $(document).ready(function(){
+                        <?php if(isset($_SESSION['login_error'])): ?>
+                            $('#staticBackdropLogin').modal('show');
+                        <?php endif; ?>
+                    });
+                    </script>
 
-                                  <form action="login.php" method="POST">
-                                      <div class="row mb-3">
-                                        <label for="inputEmail3" class="col-sm-2 col-form-label">Username</label>
-                                        <div class="col-sm-10">
-                                          <input type="email" class="form-control" id="inputEmail3" name="Username">
-                                        </div>
-                                      </div>
-                                      <div class="row mb-3">
-                                        <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
-                                        <div class="col-sm-10">
-                                          <input type="password" class="form-control" id="inputPassword3" name="Password">
-                                        </div>
-                                      </div>
-                                      <div class="container mx-auto">
-                                        <p>No tiene cuenta? <a href="indexRegistro.html">Registrarse</a></p>
-                                      </div>
-                                      </div>
-                                      <div class="mx-auto mb-3 text-light bg-dark">
-                                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Iniciar</button>
-                                      </div>
-                                  </form>
-                                  
-                          </div>
-                          </div>
+                    <div class="modal fade" id="staticBackdropLogin" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <div class="modal-header bg-dark">
+                            <h1 class="modal-title fs-5 text-light" id="staticBackdropLabel">Iniciar Sesion</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body text-light bg-dark">
+
+                            <?php if(isset($_SESSION['login_error'])): ?>
+                                <p class="text-danger"><?php echo $_SESSION['login_error']; unset($_SESSION['login_error']); ?></p>
+                            <?php endif; ?>
+
+                            <form action="login.php" method="POST" autocomplete="off">
+                                <div class="row mb-3">
+                                    <label for="inputUsername" class="col-sm-2 col-form-label">Username</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="inputUsername" name="Username">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+                                    <div class="col-sm-10">
+                                        <input type="password" class="form-control" id="inputPassword" name="Password">
+                                    </div>
+                                </div>
+                                <div class="container mx-auto">
+                                    <p>No tiene cuenta? <a href="indexRegistro.php">Registrarse</a></p>
+                                </div>
+                                <div class="mx-auto mb-3 text-light bg-dark d-flex justify-content-center">
+                                    <button type="submit" class="btn btn-secondary">Iniciar</button>
+                                </div>
+                            </form>
+
+                            </div>
+                        </div>
+                        </div>
                       </div>
-                      </div>  
-                  </li>
-              </ul>
+                    </div>  
+                <?php endif; ?>    
               </div>
-          </div>
-      </nav>
+            </div>
+        </nav>
 
     </header>
 
@@ -155,7 +178,7 @@ $row=mysqli_fetch_array($query);
           </div>
           <div class="carousel-inner mx">
             <div class="carousel-item active">
-              <img src="carrusel-redes.jpeg" class="d-block w-100" alt="..." height="400px">
+              <img src="carrusel-redes.png" class="d-block w-100" alt="..." height="400px">
               <div class="carousel-caption d-none d-md-block">
                   <div class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">
                       <h5>Conoce nuestras redes sociales</h5>
@@ -164,7 +187,7 @@ $row=mysqli_fetch_array($query);
               </div>
             </div>
             <div class="carousel-item">
-              <img src="carrusel-register.jpeg" class="d-block w-100" alt="..." height="400px">
+              <img src="carrusel-registration.jpg" class="d-block w-100" alt="..." height="400px">
               <div class="carousel-caption d-none d-md-block">
                   <div class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">
                       <h5>Registrate</h5>
@@ -173,7 +196,7 @@ $row=mysqli_fetch_array($query);
               </div>
             </div>
             <div class="carousel-item">
-              <img src="carrusel-comm.jpg" class="d-block w-100" alt="..." height="400px">
+              <img src="carrusel-com.jpg" class="d-block w-100" alt="..." height="400px">
               <div class="carousel-caption d-none d-md-block">
                   <div class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">
                       <h5>Comunicate con nosotros</h5>
@@ -216,6 +239,13 @@ $row=mysqli_fetch_array($query);
                             <input type="text" class="form-control mb-3" name="Username" placeholder="Username" value="<?php echo $row['username']  ?>"required>
                         </div>
                     </div>
+                    <?php if(isset($_SESSION['Failed_Email'])): ?>
+                        <p class="text-danger" style="text-align: left; padding-left: 125px;"><?php echo $_SESSION['Failed_Email']; unset($_SESSION['Failed_Email']); ?></p>
+                    <?php endif; ?>
+
+                    <?php if(isset($_SESSION['Failed_Username'])): ?>
+                        <p class="text-danger" style="text-align: right; padding-right: 125px;"><?php echo $_SESSION['Failed_Username']; unset($_SESSION['Failed_Username']); ?></p>
+                    <?php endif; ?>
                     <div class="row mb-3">
                         <div class="col">
                             <input type="text" class="form-control mb-3" name="Password" placeholder="Password" value="<?php echo $row['password']  ?>" required>
